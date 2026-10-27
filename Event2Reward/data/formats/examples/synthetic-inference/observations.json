@@ -1,0 +1,98 @@
+[
+  {
+    "task": "move the red block into the outlined target on the right",
+    "start": "frame-00.png",
+    "goal": "goal-reference.png",
+    "history": [
+      "frame-00.png",
+      "frame-00.png",
+      "frame-00.png",
+      "frame-00.png",
+      "frame-00.png"
+    ]
+  },
+  {
+    "task": "move the red block into the outlined target on the right",
+    "start": "frame-00.png",
+    "goal": "goal-reference.png",
+    "history": [
+      "frame-00.png",
+      "frame-00.png",
+      "frame-00.png",
+      "frame-00.png",
+      "frame-01.png"
+    ]
+  },
+  {
+    "task": "move the red block into the outlined target on the right",
+    "start": "frame-00.png",
+    "goal": "goal-reference.png",
+    "history": [
+      "frame-00.png",
+      "frame-00.png",
+      "frame-00.png",
+      "frame-01.png",
+      "frame-02.png"
+    ]
+  },
+  {
+    "task": "move the red block into the outlined target on the right",
+    "start": "frame-00.png",
+    "goal": "goal-reference.png",
+    "history": [
+      "frame-00.png",
+      "frame-00.png",
+      "frame-01.png",
+      "frame-02.png",
+      "frame-03.png"
+    ]
+  },
+  {
+    "task": "move the red block into the outlined target on the right",
+    "start": "frame-00.png",
+    "goal": "goal-reference.png",
+    "history": [
+      "frame-00.png",
+      "frame-01.png",
+      "frame-02.png",
+      "frame-03.png",
+      "frame-04.png"
+    ]
+  },
+  {
+    "task": "move the red block into the outlined target on the right",
+    "start": "frame-00.png",
+    "goal": "goal-reference.png",
+    "history": [
+      "frame-01.png",
+      "frame-02.png",
+      "frame-03.png",
+      "frame-04.png",
+      "frame-05.png"
+    ]
+  },
+  {
+    "task": "move the red block into the outlined target on the right",
+    "start": "frame-00.png",
+    "goal": "goal-reference.png",
+    "history": [
+      "frame-02.png",
+      "frame-03.png",
+      "frame-04.png",
+      "frame-05.png",
+      "frame-06.png"
+    ]
+  },
+  {
+    "task": "move the red block into the outlined target on the right",
+    "start": "frame-00.png",
+    "goal": "goal-reference.png",
+    "history": [
+      "frame-03.png",
+      "frame-04.png",
+      "frame-05.png",
+      "frame-06.png",
+      "frame-07.png"
+    ]
+  }
+]

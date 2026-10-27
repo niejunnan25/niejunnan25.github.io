@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow"><title>Event2Reward data formats and examples · Event2Reward</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../assets/mark.svg"></head><body><header class="site-header"><div class="nav-inner"><a class="brand" href="../index.html"><img src="../assets/mark.svg" width="26" height="26" alt="">Event2Reward</a><nav><a href="../index.html#release">Resources</a><a href="../index.html#demo">Demo</a></nav></div></header><main class="docs-body"><p class="doc-note">Event2Reward 0.2.0 · Project documentation</p><h1 id="event2reward-data-formats-and-examples">Event2Reward data formats and examples</h1>
+<p>Input formats, processing-tool documentation, and original synthetic examples for
+<a href="https://github.com/niejunnan25/Event2Reward">Event2Reward</a>, version 0.2.0.
+<strong>This package does not contain the full event-annotated training dataset.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Included</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../data/formats/schemas/observations.schema.json">Observation schema</a></td>
+<td>Task text, episode start, independent successful goal, and five causal history images</td>
+</tr>
+<tr>
+<td><a href="../data/formats/examples/synthetic-inference/observations.json">Synthetic example</a></td>
+<td>Eight queries with geometric images and a separately drawn goal reference</td>
+</tr>
+<tr>
+<td><a href="data-formats.html">Data formats</a></td>
+<td>Inference observations, relation records, supervision masks, and adaptation manifests</td>
+</tr>
+<tr>
+<td><a href="data-tools.html">Processing tools</a></td>
+<td>Generate synthetic training data, relocate media paths, materialize portable indices, and inspect splits</td>
+</tr>
+</tbody>
+</table>
+<h2 id="try-the-input-format">Try the input format</h2>
+<p>Follow the <a href="installation.html">Conda + pip installation guide</a>,
+then run from this package's root directory:</p>
+<pre><code class="language-bash">event2reward infer --bundle niejunnan25/Event2Reward-Qwen3.5-4B-Stage2 \
+  --observations examples/synthetic-inference/observations.json \
+  --output synthetic-progress.json --device cuda:0
+</code></pre>
+<p>Stage1 and Stage2 are publicly available on Hugging Face. The inference SDK and four LIBERO suite models remain private until their code and model releases. A complete local model directory can also be passed to <code>--bundle</code>.
+The geometric images illustrate input wiring; they are not a robot benchmark and
+do not have expected model scores. See their <a href="../data/formats/examples/synthetic-inference/provenance.json">provenance</a>.</p>
+<p>For an executable synthetic adaptation example, use the generator in the code repository:</p>
+<pre><code class="language-bash">python -m event2reward.example_data --output data/synthetic
+</code></pre>
+<p>Continue with the <a href="adaptation.html">adaptation guide</a>.
+The processing implementations live in the code repository, rather than in this data package.</p>
+<h2 id="scope-and-terms">Scope and terms</h2>
+<p>The event annotations, training/validation/test splits and source-media
+references used in the paper are coming soon. Source robot videos, private
+human-video data and the original annotation-production pipeline are not
+included. The four LIBERO demonstrations ship with the code repository examples.</p>
+<p>The original schema, documentation, and synthetic images use <a href="../data/formats/LICENSE">Apache-2.0</a>;
+see <a href="../data/formats/NOTICE">NOTICE</a>. Third-party datasets and models retain their own terms.</p></main></body></html>

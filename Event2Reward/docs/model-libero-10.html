@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow"><title>Event2Reward-Qwen3.5-4B-LIBERO-10 · Event2Reward</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../assets/mark.svg"></head><body><header class="site-header"><div class="nav-inner"><a class="brand" href="../index.html"><img src="../assets/mark.svg" width="26" height="26" alt="">Event2Reward</a><nav><a href="../index.html#release">Resources</a><a href="../index.html#demo">Demo</a></nav></div></header><main class="docs-body"><p class="doc-note">Event2Reward 0.2.0 · Project documentation</p><h1 id="event2reward-qwen35-4b-libero-10">Event2Reward-Qwen3.5-4B-LIBERO-10</h1><p class="availability-note">Stage1 and Stage2 weights are public. The inference SDK and four LIBERO suite models are not yet public; SDK commands require code repository access.</p>
+<p>Progress estimation for LIBERO-10, using the reward model adapted for the paper experiments.</p>
+<h2 id="model">Model</h2>
+<p>Qwen3.5-4B with a 101-bin progress head and a three-class auxiliary trend head. Full BF16 parameters, processor, tokenizer, configuration and training state metadata are included. Install the Event2Reward Python package separately.</p>
+<p>Saved at adaptation step 500.</p>
+<p>Initialized from Stage2 joint training and adapted with 200 target trajectories from LIBERO-10. Full Stage2 retraining requires the Stage1 checkpoint and additional datasets. See <a href="adaptation.html">training recipes</a> and <a href="reproducibility.html">data populations</a>.</p>
+<h2 id="use">Use</h2>
+<p>Follow the <a href="https://github.com/niejunnan25/Event2Reward/tree/main#installation">Conda + pip installation</a>. Inference needs an NVIDIA driver supporting CUDA 12.8; no CUDA Toolkit is required.</p>
+<pre><code class="language-python">from event2reward import Event2Reward, Observation
+model = Event2Reward.from_pretrained(&quot;niejunnan25/Event2Reward-Qwen3.5-4B-LIBERO-10&quot;)
+obs = Observation(&quot;place the bowl on the plate&quot;, &quot;start.png&quot;, &quot;goal.png&quot;,
+                  [f&quot;h{i}.png&quot; for i in range(5)])
+print(model.predict([obs]))
+</code></pre>
+<p>Inputs are task text, episode start, an independent successful goal image, and five causal RGB frames at 0.1-second intervals. Repeat the start frame for early history positions. Never use the evaluated trajectory's final frame as its goal. See the <a href="inference.html">inference guide</a>.</p>
+<h2 id="results-and-limitations">Results and limitations</h2>
+<p>54.64 ± 8.70% policy success in the complete frozen-policy residual SAC system, averaged over five seeds. This is a system result, not a success rate obtained by running this checkpoint alone.</p>
+<p>Progress is a learned estimate in [0, 1], not a calibrated probability of success. It may decrease, underestimate completion, overestimate failures or miss recovery. No general success threshold is supplied. The Spatial demonstration includes both qualitative successes and errors; it is not an aggregate model benchmark.</p>
+<p>Trend is an auxiliary training output and is not used in the downstream shaping reward. It is not offered as an event or failure detector. Variance and entropy are uncalibrated distribution statistics. <a href="reproducibility.html">Reproducibility and numerical comparison</a> describe the reference setup and commands.</p>
+<h2 id="license-and-attribution">License and attribution</h2>
+<p>Derivative weights use Apache-2.0; see LICENSE, NOTICE and LICENSES for the Qwen attribution. Third-party data and media retain their source terms. The original training videos and complete annotation collection are not included in this model repository.</p></main></body></html>

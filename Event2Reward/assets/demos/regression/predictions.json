@@ -1,0 +1,6543 @@
+{
+  "example": {
+    "id": "regression",
+    "title": "掉落后重新抓起 · Drop and recovery",
+    "note": "Follow the bowl next to the small white ramekin. Around 7 s it is held above the table, then falls; it is picked up again around 15 s. Semantic references are recorded; exact event boundaries are not certified.",
+    "task": "pick up the black bowl next to the ramekin and place it on the plate",
+    "video": "assets/regression.mp4",
+    "video_sha256": "82bf8bdc61aa861ef6b623aacbcf8a78ff2bf43e1a90ad6f8cda3b042a249fda",
+    "wrist_video": "assets/regression-wrist.mp4",
+    "wrist_video_sha256": "df224d04d3df95d58edaaddec78227dabf2865c80d1c0df000f3684879fc640f",
+    "wrist_role": "viewing aid only; not model input",
+    "start_image": "assets/regression-start.png",
+    "goal_image": "assets/goal-task01.png",
+    "goal_image_sha256": "fff24da1da9cc7ae130788b2c81ee0325bedc61ee307ebb356d2461e7846d64a",
+    "uid": "libero_pi0:spatial:episode_001112",
+    "task_id": 1,
+    "source_kind": "rollout",
+    "source_outcome": "success",
+    "recorded_split": "test",
+    "absent_from_published_spatial_training_indices": true,
+    "recorded_category": "regression_success",
+    "annotation_version": "Spatial_DualInputs_20260921_v1",
+    "annotation_sha256": "fdfbbc16bb3f6006f6c11606fc94d25576ca704881e1405a66e4694e99a849ef",
+    "events": [
+      {
+        "kind": "regression",
+        "start_seconds": 7.0,
+        "end_seconds": 15.0,
+        "anchor_frame": 70,
+        "loss_frame": 76,
+        "end_frame": 150,
+        "exact_boundary_certified": false
+      }
+    ],
+    "relation_spec": {
+      "type": "regression",
+      "reference_anchor": 70,
+      "recovery_reference": 150,
+      "member_ranges": [
+        {
+          "end_frame": 84,
+          "start_frame": 82
+        }
+      ],
+      "excluded_uncertain_ranges": [
+        {
+          "end_frame": 77,
+          "reason": "保守排除最后保持成果的边缘、滑落及落桌稳定过渡；原M不确定区间F71–F74保持不变。",
+          "start_frame": 71
+        },
+        {
+          "end_frame": 147,
+          "reason": "重新夹持、上提及离桌判读的恢复边缘；保留原R不确定性，不纳入成员或成员历史。",
+          "start_frame": 136
+        }
+      ],
+      "history_frames": 5,
+      "history_step_source_frames": 1,
+      "basis": "machine_full_10hz_conservative_relation_check",
+      "exact_boundary_claimed": false,
+      "member_source_frames": [
+        82,
+        83,
+        84
+      ],
+      "member_count": 3
+    },
+    "goal": {
+      "uid": "libero_pi_official_expert_v1:1480",
+      "source_split": "train",
+      "frame": 126,
+      "video": "assets/goal-task01.mp4",
+      "image_authority": "frozen successful reference PNG from adapted model data release",
+      "sha256": "fff24da1da9cc7ae130788b2c81ee0325bedc61ee307ebb356d2461e7846d64a"
+    }
+  },
+  "sampling": {
+    "observation_times": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2,
+      1.3,
+      1.4,
+      1.5,
+      1.6,
+      1.7,
+      1.8,
+      1.9,
+      2.0,
+      2.1,
+      2.2,
+      2.3,
+      2.4,
+      2.5,
+      2.6,
+      2.7,
+      2.8,
+      2.9,
+      3.0,
+      3.1,
+      3.2,
+      3.3,
+      3.4,
+      3.5,
+      3.6,
+      3.7,
+      3.8,
+      3.9,
+      4.0,
+      4.1,
+      4.2,
+      4.3,
+      4.4,
+      4.5,
+      4.6,
+      4.7,
+      4.8,
+      4.9,
+      5.0,
+      5.1,
+      5.2,
+      5.3,
+      5.4,
+      5.5,
+      5.6,
+      5.7,
+      5.8,
+      5.9,
+      6.0,
+      6.1,
+      6.2,
+      6.3,
+      6.4,
+      6.5,
+      6.6,
+      6.7,
+      6.8,
+      6.9,
+      7.0,
+      7.1,
+      7.2,
+      7.3,
+      7.4,
+      7.5,
+      7.6,
+      7.7,
+      7.8,
+      7.9,
+      8.0,
+      8.1,
+      8.2,
+      8.3,
+      8.4,
+      8.5,
+      8.6,
+      8.7,
+      8.8,
+      8.9,
+      9.0,
+      9.1,
+      9.2,
+      9.3,
+      9.4,
+      9.5,
+      9.6,
+      9.7,
+      9.8,
+      9.9,
+      10.0,
+      10.1,
+      10.2,
+      10.3,
+      10.4,
+      10.5,
+      10.6,
+      10.7,
+      10.8,
+      10.9,
+      11.0,
+      11.1,
+      11.2,
+      11.3,
+      11.4,
+      11.5,
+      11.6,
+      11.7,
+      11.8,
+      11.9,
+      12.0,
+      12.1,
+      12.2,
+      12.3,
+      12.4,
+      12.5,
+      12.6,
+      12.7,
+      12.8,
+      12.9,
+      13.0,
+      13.1,
+      13.2,
+      13.3,
+      13.4,
+      13.5,
+      13.6,
+      13.7,
+      13.8,
+      13.9,
+      14.0,
+      14.1,
+      14.2,
+      14.3,
+      14.4,
+      14.5,
+      14.6,
+      14.7,
+      14.8,
+      14.9,
+      15.0,
+      15.1,
+      15.2,
+      15.3,
+      15.4,
+      15.5,
+      15.6,
+      15.7,
+      15.8,
+      15.9,
+      16.0,
+      16.1,
+      16.2,
+      16.3,
+      16.4,
+      16.5,
+      16.6,
+      16.7,
+      16.8,
+      16.9,
+      17.0,
+      17.1,
+      17.2,
+      17.3,
+      17.4,
+      17.5,
+      17.6,
+      17.7,
+      17.8,
+      17.9,
+      18.0,
+      18.1,
+      18.2,
+      18.3,
+      18.4,
+      18.5,
+      18.6,
+      18.7,
+      18.8
+    ],
+    "native_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188
+    ],
+    "native_timestamps": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0,
+      1.1,
+      1.2,
+      1.3,
+      1.4,
+      1.5,
+      1.6,
+      1.7,
+      1.8,
+      1.9,
+      2.0,
+      2.1,
+      2.2,
+      2.3,
+      2.4,
+      2.5,
+      2.6,
+      2.7,
+      2.8,
+      2.9,
+      3.0,
+      3.1,
+      3.2,
+      3.3,
+      3.4,
+      3.5,
+      3.6,
+      3.7,
+      3.8,
+      3.9,
+      4.0,
+      4.1,
+      4.2,
+      4.3,
+      4.4,
+      4.5,
+      4.6,
+      4.7,
+      4.8,
+      4.9,
+      5.0,
+      5.1,
+      5.2,
+      5.3,
+      5.4,
+      5.5,
+      5.6,
+      5.7,
+      5.8,
+      5.9,
+      6.0,
+      6.1,
+      6.2,
+      6.3,
+      6.4,
+      6.5,
+      6.6,
+      6.7,
+      6.8,
+      6.9,
+      7.0,
+      7.1,
+      7.2,
+      7.3,
+      7.4,
+      7.5,
+      7.6,
+      7.7,
+      7.8,
+      7.9,
+      8.0,
+      8.1,
+      8.2,
+      8.3,
+      8.4,
+      8.5,
+      8.6,
+      8.7,
+      8.8,
+      8.9,
+      9.0,
+      9.1,
+      9.2,
+      9.3,
+      9.4,
+      9.5,
+      9.6,
+      9.7,
+      9.8,
+      9.9,
+      10.0,
+      10.1,
+      10.2,
+      10.3,
+      10.4,
+      10.5,
+      10.6,
+      10.7,
+      10.8,
+      10.9,
+      11.0,
+      11.1,
+      11.2,
+      11.3,
+      11.4,
+      11.5,
+      11.6,
+      11.7,
+      11.8,
+      11.9,
+      12.0,
+      12.1,
+      12.2,
+      12.3,
+      12.4,
+      12.5,
+      12.6,
+      12.7,
+      12.8,
+      12.9,
+      13.0,
+      13.1,
+      13.2,
+      13.3,
+      13.4,
+      13.5,
+      13.6,
+      13.7,
+      13.8,
+      13.9,
+      14.0,
+      14.1,
+      14.2,
+      14.3,
+      14.4,
+      14.5,
+      14.6,
+      14.7,
+      14.8,
+      14.9,
+      15.0,
+      15.1,
+      15.2,
+      15.3,
+      15.4,
+      15.5,
+      15.6,
+      15.7,
+      15.8,
+      15.9,
+      16.0,
+      16.1,
+      16.2,
+      16.3,
+      16.4,
+      16.5,
+      16.6,
+      16.7,
+      16.8,
+      16.9,
+      17.0,
+      17.1,
+      17.2,
+      17.3,
+      17.4,
+      17.5,
+      17.6,
+      17.7,
+      17.8,
+      17.9,
+      18.0,
+      18.1,
+      18.2,
+      18.3,
+      18.4,
+      18.5,
+      18.6,
+      18.7,
+      18.8
+    ],
+    "query_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      179,
+      180,
+      181,
+      182,
+      183,
+      184,
+      185,
+      186,
+      187,
+      188
+    ],
+    "history_seconds": 0.1,
+    "query_seconds": 0.1,
+    "rule": "latest PTS <= each observation tick; append exact final frame; history uses five observation indices with left padding",
+    "native_frame_count": 189,
+    "presentation_origin_seconds": 0.0,
+    "duration_to_last_frame": 18.8,
+    "width": 224,
+    "height": 224,
+    "rgb_conversion": "swscale POINT|FULL_CHR_H_INT|ACCURATE_RND|BITEXACT",
+    "rgb_flags": 794640
+  },
+  "predictions": [
+    {
+      "progress": 0.0008704960346221924,
+      "trend": "stable",
+      "trend_probabilities": [
+        0.028935857117176056,
+        0.9582239985466003,
+        0.01284020859748125
+      ],
+      "progress_variance": 0.000595255580265075,
+      "progress_entropy": 0.023624099791049957,
+      "query_index": 0,
+      "history_indices": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "timestamp": 0.0,
+      "source_frame_index": 0,
+      "source_frame_timestamp": 0.0,
+      "history_native_indices": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "progress": 0.03245826065540314,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9878082871437073,
+        0.004036946687847376,
+        0.0081548560410738
+      ],
+      "progress_variance": 0.01342571247369051,
+      "progress_entropy": 1.7464160919189453,
+      "query_index": 1,
+      "history_indices": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "timestamp": 0.1,
+      "source_frame_index": 1,
+      "source_frame_timestamp": 0.1,
+      "history_native_indices": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "progress": 0.04347255080938339,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9984375834465027,
+        0.0008963419240899384,
+        0.0006661047227680683
+      ],
+      "progress_variance": 0.014870383776724339,
+      "progress_entropy": 2.139331102371216,
+      "query_index": 2,
+      "history_indices": [
+        0,
+        0,
+        0,
+        1,
+        2
+      ],
+      "timestamp": 0.2,
+      "source_frame_index": 2,
+      "source_frame_timestamp": 0.2,
+      "history_native_indices": [
+        0,
+        0,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "progress": 0.04681610316038132,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9995465874671936,
+        0.00033011200139299035,
+        0.00012335384963080287
+      ],
+      "progress_variance": 0.01437146496027708,
+      "progress_entropy": 2.245783805847168,
+      "query_index": 3,
+      "history_indices": [
+        0,
+        0,
+        1,
+        2,
+        3
+      ],
+      "timestamp": 0.3,
+      "source_frame_index": 3,
+      "source_frame_timestamp": 0.3,
+      "history_native_indices": [
+        0,
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "progress": 0.05130325257778168,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999718964099884,
+        0.00021993991686031222,
+        6.107510853325948e-05
+      ],
+      "progress_variance": 0.014612838625907898,
+      "progress_entropy": 2.3582565784454346,
+      "query_index": 4,
+      "history_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "timestamp": 0.4,
+      "source_frame_index": 4,
+      "source_frame_timestamp": 0.4,
+      "history_native_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "progress": 0.05662435665726662,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997792840003967,
+        0.00016602939285803586,
+        5.475067882798612e-05
+      ],
+      "progress_variance": 0.014992447569966316,
+      "progress_entropy": 2.453615188598633,
+      "query_index": 5,
+      "history_indices": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "timestamp": 0.5,
+      "source_frame_index": 5,
+      "source_frame_timestamp": 0.5,
+      "history_native_indices": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "progress": 0.06653907895088196,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998193383216858,
+        0.00012338750821072608,
+        5.738052277592942e-05
+      ],
+      "progress_variance": 0.014568117447197437,
+      "progress_entropy": 2.599144697189331,
+      "query_index": 6,
+      "history_indices": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "timestamp": 0.6,
+      "source_frame_index": 6,
+      "source_frame_timestamp": 0.6,
+      "history_native_indices": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "progress": 0.06660594046115875,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998421669006348,
+        8.749684639042243e-05,
+        7.030569395283237e-05
+      ],
+      "progress_variance": 0.01396346278488636,
+      "progress_entropy": 2.607846260070801,
+      "query_index": 7,
+      "history_indices": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "timestamp": 0.7,
+      "source_frame_index": 7,
+      "source_frame_timestamp": 0.7,
+      "history_native_indices": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "progress": 0.07192293554544449,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997994303703308,
+        0.000131342705572024,
+        6.921274325577542e-05
+      ],
+      "progress_variance": 0.014008603990077972,
+      "progress_entropy": 2.6543326377868652,
+      "query_index": 8,
+      "history_indices": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "timestamp": 0.8,
+      "source_frame_index": 8,
+      "source_frame_timestamp": 0.8,
+      "history_native_indices": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "progress": 0.0686168521642685,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999847412109375,
+        8.749730477575213e-05,
+        6.50224756100215e-05
+      ],
+      "progress_variance": 0.013854026794433594,
+      "progress_entropy": 2.6245434284210205,
+      "query_index": 9,
+      "history_indices": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "timestamp": 0.9,
+      "source_frame_index": 9,
+      "source_frame_timestamp": 0.9,
+      "history_native_indices": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "progress": 0.07407255470752716,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997944235801697,
+        0.00012338442320469767,
+        8.219174924306571e-05
+      ],
+      "progress_variance": 0.013685203157365322,
+      "progress_entropy": 2.682788848876953,
+      "query_index": 10,
+      "history_indices": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "timestamp": 1.0,
+      "source_frame_index": 10,
+      "source_frame_timestamp": 1.0,
+      "history_native_indices": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "progress": 0.07139401137828827,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998573064804077,
+        8.349133713636547e-05,
+        5.920422336203046e-05
+      ],
+      "progress_variance": 0.01388575416058302,
+      "progress_entropy": 2.6559367179870605,
+      "query_index": 11,
+      "history_indices": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "timestamp": 1.1,
+      "source_frame_index": 11,
+      "source_frame_timestamp": 1.1,
+      "history_native_indices": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "progress": 0.07503560930490494,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997716546058655,
+        0.00015117031580302864,
+        7.721024303464219e-05
+      ],
+      "progress_variance": 0.013626382686197758,
+      "progress_entropy": 2.703838586807251,
+      "query_index": 12,
+      "history_indices": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "timestamp": 1.2,
+      "source_frame_index": 12,
+      "source_frame_timestamp": 1.2,
+      "history_native_indices": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "progress": 0.07273382693529129,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998339414596558,
+        0.00010390421812189743,
+        6.204404053278267e-05
+      ],
+      "progress_variance": 0.013704419136047363,
+      "progress_entropy": 2.677882194519043,
+      "query_index": 13,
+      "history_indices": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "timestamp": 1.3,
+      "source_frame_index": 13,
+      "source_frame_timestamp": 1.3,
+      "history_native_indices": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "progress": 0.07746565341949463,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998476505279541,
+        9.027479245560244e-05,
+        6.204489181982353e-05
+      ],
+      "progress_variance": 0.013536419719457626,
+      "progress_entropy": 2.723759651184082,
+      "query_index": 14,
+      "history_indices": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "timestamp": 1.4,
+      "source_frame_index": 14,
+      "source_frame_timestamp": 1.4,
+      "history_native_indices": [
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "progress": 0.07879486680030823,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999849796295166,
+        8.61409935168922e-05,
+        6.401454447768629e-05
+      ],
+      "progress_variance": 0.013466084375977516,
+      "progress_entropy": 2.7446038722991943,
+      "query_index": 15,
+      "history_indices": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "timestamp": 1.5,
+      "source_frame_index": 15,
+      "source_frame_timestamp": 1.5,
+      "history_native_indices": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "progress": 0.08513487130403519,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998428821563721,
+        8.349012932740152e-05,
+        7.367978105321527e-05
+      ],
+      "progress_variance": 0.013578331097960472,
+      "progress_entropy": 2.8042144775390625,
+      "query_index": 16,
+      "history_indices": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "timestamp": 1.6,
+      "source_frame_index": 16,
+      "source_frame_timestamp": 1.6,
+      "history_native_indices": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "progress": 0.0864247977733612,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998414516448975,
+        5.306948150973767e-05,
+        0.00010554126492934301
+      ],
+      "progress_variance": 0.01313758920878172,
+      "progress_entropy": 2.7964673042297363,
+      "query_index": 17,
+      "history_indices": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "timestamp": 1.7,
+      "source_frame_index": 17,
+      "source_frame_timestamp": 1.7,
+      "history_native_indices": [
+        13,
+        14,
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "progress": 0.08829107135534286,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998156428337097,
+        7.721364090684801e-05,
+        0.00010720053251134232
+      ],
+      "progress_variance": 0.013071700930595398,
+      "progress_entropy": 2.8291215896606445,
+      "query_index": 18,
+      "history_indices": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "timestamp": 1.8,
+      "source_frame_index": 18,
+      "source_frame_timestamp": 1.8,
+      "history_native_indices": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "progress": 0.09523198753595352,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998599290847778,
+        7.601993274874985e-05,
+        6.401519931387156e-05
+      ],
+      "progress_variance": 0.012834614142775536,
+      "progress_entropy": 2.8564274311065674,
+      "query_index": 19,
+      "history_indices": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "timestamp": 1.9,
+      "source_frame_index": 19,
+      "source_frame_timestamp": 1.9,
+      "history_native_indices": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "progress": 0.09309981018304825,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998559951782227,
+        7.030666165519506e-05,
+        7.368074875557795e-05
+      ],
+      "progress_variance": 0.012719232589006424,
+      "progress_entropy": 2.84621524810791,
+      "query_index": 20,
+      "history_indices": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "timestamp": 2.0,
+      "source_frame_index": 20,
+      "source_frame_timestamp": 2.0,
+      "history_native_indices": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "progress": 0.09051026403903961,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.99986732006073,
+        7.966878183651716e-05,
+        5.3070853027747944e-05
+      ],
+      "progress_variance": 0.013214126229286194,
+      "progress_entropy": 2.8344149589538574,
+      "query_index": 21,
+      "history_indices": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "timestamp": 2.1,
+      "source_frame_index": 21,
+      "source_frame_timestamp": 2.1,
+      "history_native_indices": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "progress": 0.0925813615322113,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998623132705688,
+        7.368121441686526e-05,
+        6.401535210898146e-05
+      ],
+      "progress_variance": 0.013034410774707794,
+      "progress_entropy": 2.8561818599700928,
+      "query_index": 22,
+      "history_indices": [
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "timestamp": 2.2,
+      "source_frame_index": 22,
+      "source_frame_timestamp": 2.2,
+      "history_native_indices": [
+        18,
+        19,
+        20,
+        21,
+        22
+      ]
+    },
+    {
+      "progress": 0.09300224483013153,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998537302017212,
+        7.368058140855283e-05,
+        7.253827789099887e-05
+      ],
+      "progress_variance": 0.01267755776643753,
+      "progress_entropy": 2.860363721847534,
+      "query_index": 23,
+      "history_indices": [
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "timestamp": 2.3,
+      "source_frame_index": 23,
+      "source_frame_timestamp": 2.3,
+      "history_native_indices": [
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "progress": 0.0934169739484787,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997851252555847,
+        6.604231020901352e-05,
+        0.0001488286507083103
+      ],
+      "progress_variance": 0.01244265679270029,
+      "progress_entropy": 2.856599807739258,
+      "query_index": 24,
+      "history_indices": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      "timestamp": 2.4,
+      "source_frame_index": 24,
+      "source_frame_timestamp": 2.4,
+      "history_native_indices": [
+        20,
+        21,
+        22,
+        23,
+        24
+      ]
+    },
+    {
+      "progress": 0.09407098591327667,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997939467430115,
+        6.401097198249772e-05,
+        0.0001420145417796448
+      ],
+      "progress_variance": 0.012182897888123989,
+      "progress_entropy": 2.866028070449829,
+      "query_index": 25,
+      "history_indices": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "timestamp": 2.5,
+      "source_frame_index": 25,
+      "source_frame_timestamp": 2.5,
+      "history_native_indices": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "progress": 0.0961882695555687,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998214840888977,
+        8.091967174550518e-05,
+        9.760775719769299e-05
+      ],
+      "progress_variance": 0.012205881997942924,
+      "progress_entropy": 2.8745357990264893,
+      "query_index": 26,
+      "history_indices": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "timestamp": 2.6,
+      "source_frame_index": 26,
+      "source_frame_timestamp": 2.6,
+      "history_native_indices": [
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "progress": 0.09664036333560944,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998536109924316,
+        7.030649430816993e-05,
+        7.601945253554732e-05
+      ],
+      "progress_variance": 0.01305109728127718,
+      "progress_entropy": 2.8925728797912598,
+      "query_index": 27,
+      "history_indices": [
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "timestamp": 2.7,
+      "source_frame_index": 27,
+      "source_frame_timestamp": 2.7,
+      "history_native_indices": [
+        23,
+        24,
+        25,
+        26,
+        27
+      ]
+    },
+    {
+      "progress": 0.0987866222858429,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998538494110107,
+        9.460775618208572e-05,
+        5.143734597368166e-05
+      ],
+      "progress_variance": 0.012712037190794945,
+      "progress_entropy": 2.8943052291870117,
+      "query_index": 28,
+      "history_indices": [
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "timestamp": 2.8,
+      "source_frame_index": 28,
+      "source_frame_timestamp": 2.8,
+      "history_native_indices": [
+        24,
+        25,
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "progress": 0.10299836099147797,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997994303703308,
+        0.00013551197480410337,
+        6.501935422420502e-05
+      ],
+      "progress_variance": 0.012685131281614304,
+      "progress_entropy": 2.9266583919525146,
+      "query_index": 29,
+      "history_indices": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "timestamp": 2.9,
+      "source_frame_index": 29,
+      "source_frame_timestamp": 2.9,
+      "history_native_indices": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "progress": 0.10382840037345886,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998219609260559,
+        9.460472938371822e-05,
+        8.34883758216165e-05
+      ],
+      "progress_variance": 0.01220978144556284,
+      "progress_entropy": 2.929814338684082,
+      "query_index": 30,
+      "history_indices": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "timestamp": 3.0,
+      "source_frame_index": 30,
+      "source_frame_timestamp": 3.0,
+      "history_native_indices": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "progress": 0.10538686811923981,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998273849487305,
+        8.092015195870772e-05,
+        9.169455734081566e-05
+      ],
+      "progress_variance": 0.012148866429924965,
+      "progress_entropy": 2.9449305534362793,
+      "query_index": 31,
+      "history_indices": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "timestamp": 3.1,
+      "source_frame_index": 31,
+      "source_frame_timestamp": 3.1,
+      "history_native_indices": [
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "progress": 0.10038918256759644,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997616410255432,
+        0.00010070013377116993,
+        0.00013764077448286116
+      ],
+      "progress_variance": 0.012657372280955315,
+      "progress_entropy": 2.9175055027008057,
+      "query_index": 32,
+      "history_indices": [
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "timestamp": 3.2,
+      "source_frame_index": 32,
+      "source_frame_timestamp": 3.2,
+      "history_native_indices": [
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "progress": 0.10305895656347275,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999880313873291,
+        6.40165017102845e-05,
+        5.5618500482523814e-05
+      ],
+      "progress_variance": 0.0125080281868577,
+      "progress_entropy": 2.9412765502929688,
+      "query_index": 33,
+      "history_indices": [
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "timestamp": 3.3,
+      "source_frame_index": 33,
+      "source_frame_timestamp": 3.3,
+      "history_native_indices": [
+        29,
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "progress": 0.10349046438932419,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998090863227844,
+        0.00011959004041273147,
+        7.14104826329276e-05
+      ],
+      "progress_variance": 0.012525406666100025,
+      "progress_entropy": 2.9440670013427734,
+      "query_index": 34,
+      "history_indices": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "timestamp": 3.4,
+      "source_frame_index": 34,
+      "source_frame_timestamp": 3.4,
+      "history_native_indices": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "progress": 0.10252144932746887,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998787641525269,
+        7.368242222582921e-05,
+        4.7572953917551786e-05
+      ],
+      "progress_variance": 0.012570365332067013,
+      "progress_entropy": 2.9343149662017822,
+      "query_index": 35,
+      "history_indices": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "timestamp": 3.5,
+      "source_frame_index": 35,
+      "source_frame_timestamp": 3.5,
+      "history_native_indices": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "progress": 0.10675793886184692,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997897744178772,
+        0.0001376446452923119,
+        7.253363583004102e-05
+      ],
+      "progress_variance": 0.012393025681376457,
+      "progress_entropy": 2.972731590270996,
+      "query_index": 36,
+      "history_indices": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      "timestamp": 3.6,
+      "source_frame_index": 36,
+      "source_frame_timestamp": 3.6,
+      "history_native_indices": [
+        32,
+        33,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "progress": 0.10529042035341263,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998300075531006,
+        0.00010070702410303056,
+        6.921486055944115e-05
+      ],
+      "progress_variance": 0.012285768985748291,
+      "progress_entropy": 2.9575681686401367,
+      "query_index": 37,
+      "history_indices": [
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "timestamp": 3.7,
+      "source_frame_index": 37,
+      "source_frame_timestamp": 3.7,
+      "history_native_indices": [
+        33,
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "progress": 0.10947525501251221,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998000264167786,
+        0.00011773490405175835,
+        8.219220762839541e-05
+      ],
+      "progress_variance": 0.012460509315133095,
+      "progress_entropy": 2.998689651489258,
+      "query_index": 38,
+      "history_indices": [
+        34,
+        35,
+        36,
+        37,
+        38
+      ],
+      "timestamp": 3.8,
+      "source_frame_index": 38,
+      "source_frame_timestamp": 3.8,
+      "history_native_indices": [
+        34,
+        35,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "progress": 0.11240164190530777,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998458623886108,
+        9.761014371179044e-05,
+        5.6492415751563385e-05
+      ],
+      "progress_variance": 0.012386485934257507,
+      "progress_entropy": 3.0004734992980957,
+      "query_index": 39,
+      "history_indices": [
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "timestamp": 3.9,
+      "source_frame_index": 39,
+      "source_frame_timestamp": 3.9,
+      "history_native_indices": [
+        35,
+        36,
+        37,
+        38,
+        39
+      ]
+    },
+    {
+      "progress": 0.11255669593811035,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998704195022583,
+        8.34924285300076e-05,
+        4.6108900278341025e-05
+      ],
+      "progress_variance": 0.012499207630753517,
+      "progress_entropy": 3.018488883972168,
+      "query_index": 40,
+      "history_indices": [
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "timestamp": 4.0,
+      "source_frame_index": 40,
+      "source_frame_timestamp": 4.0,
+      "history_native_indices": [
+        36,
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "progress": 0.11577682942152023,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998643398284912,
+        9.027629857882857e-05,
+        4.5393771870294586e-05
+      ],
+      "progress_variance": 0.012047376483678818,
+      "progress_entropy": 3.0116987228393555,
+      "query_index": 41,
+      "history_indices": [
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "timestamp": 4.1,
+      "source_frame_index": 41,
+      "source_frame_timestamp": 4.1,
+      "history_native_indices": [
+        37,
+        38,
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "progress": 0.12167522311210632,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998902082443237,
+        6.708937871735543e-05,
+        4.264460221747868e-05
+      ],
+      "progress_variance": 0.011802980676293373,
+      "progress_entropy": 3.036949634552002,
+      "query_index": 42,
+      "history_indices": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "timestamp": 4.2,
+      "source_frame_index": 42,
+      "source_frame_timestamp": 4.2,
+      "history_native_indices": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "progress": 0.12611985206604004,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998568296432495,
+        8.749812695896253e-05,
+        5.561719444813207e-05
+      ],
+      "progress_variance": 0.011271912604570389,
+      "progress_entropy": 3.0270848274230957,
+      "query_index": 43,
+      "history_indices": [
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "timestamp": 4.3,
+      "source_frame_index": 43,
+      "source_frame_timestamp": 4.3,
+      "history_native_indices": [
+        39,
+        40,
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "progress": 0.1335517168045044,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998691082000732,
+        8.614265243522823e-05,
+        4.469021951081231e-05
+      ],
+      "progress_variance": 0.011230900883674622,
+      "progress_entropy": 3.0515658855438232,
+      "query_index": 44,
+      "history_indices": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "timestamp": 4.4,
+      "source_frame_index": 44,
+      "source_frame_timestamp": 4.4,
+      "history_native_indices": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "progress": 0.12715792655944824,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998525381088257,
+        9.914794645737857e-05,
+        4.83208496007137e-05
+      ],
+      "progress_variance": 0.011763038113713264,
+      "progress_entropy": 3.075824499130249,
+      "query_index": 45,
+      "history_indices": [
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "timestamp": 4.5,
+      "source_frame_index": 45,
+      "source_frame_timestamp": 4.5,
+      "history_native_indices": [
+        41,
+        42,
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "progress": 0.13209907710552216,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998478889465332,
+        0.00010229475446976721,
+        4.98544832225889e-05
+      ],
+      "progress_variance": 0.011639795266091824,
+      "progress_entropy": 3.0809288024902344,
+      "query_index": 46,
+      "history_indices": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ],
+      "timestamp": 4.6,
+      "source_frame_index": 46,
+      "source_frame_timestamp": 4.6,
+      "history_native_indices": [
+        42,
+        43,
+        44,
+        45,
+        46
+      ]
+    },
+    {
+      "progress": 0.12736117839813232,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997709393501282,
+        0.00016602801042608917,
+        6.301712710410357e-05
+      ],
+      "progress_variance": 0.012347490526735783,
+      "progress_entropy": 3.087315797805786,
+      "query_index": 47,
+      "history_indices": [
+        43,
+        44,
+        45,
+        46,
+        47
+      ],
+      "timestamp": 4.7,
+      "source_frame_index": 47,
+      "source_frame_timestamp": 4.7,
+      "history_native_indices": [
+        43,
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    {
+      "progress": 0.13346250355243683,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998750686645508,
+        8.092400821624324e-05,
+        4.3997624743497e-05
+      ],
+      "progress_variance": 0.011879375204443932,
+      "progress_entropy": 3.094024181365967,
+      "query_index": 48,
+      "history_indices": [
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "timestamp": 4.8,
+      "source_frame_index": 48,
+      "source_frame_timestamp": 4.8,
+      "history_native_indices": [
+        44,
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "progress": 0.14026112854480743,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999836802482605,
+        0.00011411678860895336,
+        4.908101982437074e-05
+      ],
+      "progress_variance": 0.011717794463038445,
+      "progress_entropy": 3.112241268157959,
+      "query_index": 49,
+      "history_indices": [
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "timestamp": 4.9,
+      "source_frame_index": 49,
+      "source_frame_timestamp": 4.9,
+      "history_native_indices": [
+        45,
+        46,
+        47,
+        48,
+        49
+      ]
+    },
+    {
+      "progress": 0.14388345181941986,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999843955039978,
+        0.0001106065756175667,
+        4.5392847823677585e-05
+      ],
+      "progress_variance": 0.011275621131062508,
+      "progress_entropy": 3.097444534301758,
+      "query_index": 50,
+      "history_indices": [
+        46,
+        47,
+        48,
+        49,
+        50
+      ],
+      "timestamp": 5.0,
+      "source_frame_index": 50,
+      "source_frame_timestamp": 5.0,
+      "history_native_indices": [
+        46,
+        47,
+        48,
+        49,
+        50
+      ]
+    },
+    {
+      "progress": 0.14075224101543427,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998854398727417,
+        7.254057709360495e-05,
+        4.198326132609509e-05
+      ],
+      "progress_variance": 0.012736232951283455,
+      "progress_entropy": 3.150914192199707,
+      "query_index": 51,
+      "history_indices": [
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "timestamp": 5.1,
+      "source_frame_index": 51,
+      "source_frame_timestamp": 5.1,
+      "history_native_indices": [
+        47,
+        48,
+        49,
+        50,
+        51
+      ]
+    },
+    {
+      "progress": 0.1497262567281723,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998548030853271,
+        9.761101682670414e-05,
+        4.757181159220636e-05
+      ],
+      "progress_variance": 0.013148503378033638,
+      "progress_entropy": 3.1960437297821045,
+      "query_index": 52,
+      "history_indices": [
+        48,
+        49,
+        50,
+        51,
+        52
+      ],
+      "timestamp": 5.2,
+      "source_frame_index": 52,
+      "source_frame_timestamp": 5.2,
+      "history_native_indices": [
+        48,
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "progress": 0.1509370654821396,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998898506164551,
+        6.401711289072409e-05,
+        4.610979522112757e-05
+      ],
+      "progress_variance": 0.014556948095560074,
+      "progress_entropy": 3.2481751441955566,
+      "query_index": 53,
+      "history_indices": [
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "timestamp": 5.3,
+      "source_frame_index": 53,
+      "source_frame_timestamp": 5.3,
+      "history_native_indices": [
+        49,
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "progress": 0.15716509521007538,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998805522918701,
+        6.20469290879555e-05,
+        5.738403706345707e-05
+      ],
+      "progress_variance": 0.014451127499341965,
+      "progress_entropy": 3.2837653160095215,
+      "query_index": 54,
+      "history_indices": [
+        50,
+        51,
+        52,
+        53,
+        54
+      ],
+      "timestamp": 5.4,
+      "source_frame_index": 54,
+      "source_frame_timestamp": 5.4,
+      "history_native_indices": [
+        50,
+        51,
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "progress": 0.14922206103801727,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998806715011597,
+        5.22487644047942e-05,
+        6.708873843308538e-05
+      ],
+      "progress_variance": 0.015789542347192764,
+      "progress_entropy": 3.3018040657043457,
+      "query_index": 55,
+      "history_indices": [
+        51,
+        52,
+        53,
+        54,
+        55
+      ],
+      "timestamp": 5.5,
+      "source_frame_index": 55,
+      "source_frame_timestamp": 5.5,
+      "history_native_indices": [
+        51,
+        52,
+        53,
+        54,
+        55
+      ]
+    },
+    {
+      "progress": 0.1340094804763794,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998636245727539,
+        4.331500531407073e-05,
+        9.314190538134426e-05
+      ],
+      "progress_variance": 0.016850044950842857,
+      "progress_entropy": 3.283127784729004,
+      "query_index": 56,
+      "history_indices": [
+        52,
+        53,
+        54,
+        55,
+        56
+      ],
+      "timestamp": 5.6,
+      "source_frame_index": 56,
+      "source_frame_timestamp": 5.6,
+      "history_native_indices": [
+        52,
+        53,
+        54,
+        55,
+        56
+      ]
+    },
+    {
+      "progress": 0.13440635800361633,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998410940170288,
+        7.141276728361845e-05,
+        8.749675180297345e-05
+      ],
+      "progress_variance": 0.018764205276966095,
+      "progress_entropy": 3.324812412261963,
+      "query_index": 57,
+      "history_indices": [
+        53,
+        54,
+        55,
+        56,
+        57
+      ],
+      "timestamp": 5.7,
+      "source_frame_index": 57,
+      "source_frame_timestamp": 5.7,
+      "history_native_indices": [
+        53,
+        54,
+        55,
+        56,
+        57
+      ]
+    },
+    {
+      "progress": 0.13332079350948334,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998618364334106,
+        5.064028664492071e-05,
+        8.749856351641938e-05
+      ],
+      "progress_variance": 0.01883615553379059,
+      "progress_entropy": 3.3254270553588867,
+      "query_index": 58,
+      "history_indices": [
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "timestamp": 5.8,
+      "source_frame_index": 58,
+      "source_frame_timestamp": 5.8,
+      "history_native_indices": [
+        54,
+        55,
+        56,
+        57,
+        58
+      ]
+    },
+    {
+      "progress": 0.1333024501800537,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998438358306885,
+        6.302171823335811e-05,
+        9.314006456406787e-05
+      ],
+      "progress_variance": 0.01858939602971077,
+      "progress_entropy": 3.316033363342285,
+      "query_index": 59,
+      "history_indices": [
+        55,
+        56,
+        57,
+        58,
+        59
+      ],
+      "timestamp": 5.9,
+      "source_frame_index": 59,
+      "source_frame_timestamp": 5.9,
+      "history_native_indices": [
+        55,
+        56,
+        57,
+        58,
+        59
+      ]
+    },
+    {
+      "progress": 0.1312730312347412,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998553991317749,
+        5.143742237123661e-05,
+        9.314114140579477e-05
+      ],
+      "progress_variance": 0.017384592443704605,
+      "progress_entropy": 3.277446746826172,
+      "query_index": 60,
+      "history_indices": [
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "timestamp": 6.0,
+      "source_frame_index": 60,
+      "source_frame_timestamp": 6.0,
+      "history_native_indices": [
+        56,
+        57,
+        58,
+        59,
+        60
+      ]
+    },
+    {
+      "progress": 0.1434362530708313,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998664855957031,
+        5.390655132941902e-05,
+        7.966871635289863e-05
+      ],
+      "progress_variance": 0.01661086082458496,
+      "progress_entropy": 3.3044447898864746,
+      "query_index": 61,
+      "history_indices": [
+        57,
+        58,
+        59,
+        60,
+        61
+      ],
+      "timestamp": 6.1,
+      "source_frame_index": 61,
+      "source_frame_timestamp": 6.1,
+      "history_native_indices": [
+        57,
+        58,
+        59,
+        60,
+        61
+      ]
+    },
+    {
+      "progress": 0.13331542909145355,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999868631362915,
+        6.204619421623647e-05,
+        6.921753083588555e-05
+      ],
+      "progress_variance": 0.017295552417635918,
+      "progress_entropy": 3.2753379344940186,
+      "query_index": 62,
+      "history_indices": [
+        58,
+        59,
+        60,
+        61,
+        62
+      ],
+      "timestamp": 6.2,
+      "source_frame_index": 62,
+      "source_frame_timestamp": 6.2,
+      "history_native_indices": [
+        58,
+        59,
+        60,
+        61,
+        62
+      ]
+    },
+    {
+      "progress": 0.13025128841400146,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998584985733032,
+        5.9204292483627796e-05,
+        8.219701703637838e-05
+      ],
+      "progress_variance": 0.01769368350505829,
+      "progress_entropy": 3.2752652168273926,
+      "query_index": 63,
+      "history_indices": [
+        59,
+        60,
+        61,
+        62,
+        63
+      ],
+      "timestamp": 6.3,
+      "source_frame_index": 63,
+      "source_frame_timestamp": 6.3,
+      "history_native_indices": [
+        59,
+        60,
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "progress": 0.13818395137786865,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998652935028076,
+        6.204598321346566e-05,
+        7.25391146261245e-05
+      ],
+      "progress_variance": 0.016520366072654724,
+      "progress_entropy": 3.2732410430908203,
+      "query_index": 64,
+      "history_indices": [
+        60,
+        61,
+        62,
+        63,
+        64
+      ],
+      "timestamp": 6.4,
+      "source_frame_index": 64,
+      "source_frame_timestamp": 6.4,
+      "history_native_indices": [
+        60,
+        61,
+        62,
+        63,
+        64
+      ]
+    },
+    {
+      "progress": 0.13076214492321014,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998418092727661,
+        6.204452802194282e-05,
+        9.609645348973572e-05
+      ],
+      "progress_variance": 0.017760440707206726,
+      "progress_entropy": 3.2662343978881836,
+      "query_index": 65,
+      "history_indices": [
+        61,
+        62,
+        63,
+        64,
+        65
+      ],
+      "timestamp": 6.5,
+      "source_frame_index": 65,
+      "source_frame_timestamp": 6.5,
+      "history_native_indices": [
+        61,
+        62,
+        63,
+        64,
+        65
+      ]
+    },
+    {
+      "progress": 0.13139602541923523,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998125433921814,
+        6.013385791447945e-05,
+        0.00012730338494293392
+      ],
+      "progress_variance": 0.016833527013659477,
+      "progress_entropy": 3.2498619556427,
+      "query_index": 66,
+      "history_indices": [
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "timestamp": 6.6,
+      "source_frame_index": 66,
+      "source_frame_timestamp": 6.6,
+      "history_native_indices": [
+        62,
+        63,
+        64,
+        65,
+        66
+      ]
+    },
+    {
+      "progress": 0.14395585656166077,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998373985290527,
+        7.367937359958887e-05,
+        8.887430158210918e-05
+      ],
+      "progress_variance": 0.01739884912967682,
+      "progress_entropy": 3.3265018463134766,
+      "query_index": 67,
+      "history_indices": [
+        63,
+        64,
+        65,
+        66,
+        67
+      ],
+      "timestamp": 6.7,
+      "source_frame_index": 67,
+      "source_frame_timestamp": 6.7,
+      "history_native_indices": [
+        63,
+        64,
+        65,
+        66,
+        67
+      ]
+    },
+    {
+      "progress": 0.14544054865837097,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998143315315247,
+        0.00010229132021777332,
+        8.348774281330407e-05
+      ],
+      "progress_variance": 0.016979077830910683,
+      "progress_entropy": 3.3374383449554443,
+      "query_index": 68,
+      "history_indices": [
+        64,
+        65,
+        66,
+        67,
+        68
+      ],
+      "timestamp": 6.8,
+      "source_frame_index": 68,
+      "source_frame_timestamp": 6.8,
+      "history_native_indices": [
+        64,
+        65,
+        66,
+        67,
+        68
+      ]
+    },
+    {
+      "progress": 0.15148302912712097,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998812675476074,
+        5.561855505220592e-05,
+        6.302408291958272e-05
+      ],
+      "progress_variance": 0.015316192060709,
+      "progress_entropy": 3.314629554748535,
+      "query_index": 69,
+      "history_indices": [
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "timestamp": 6.9,
+      "source_frame_index": 69,
+      "source_frame_timestamp": 6.9,
+      "history_native_indices": [
+        65,
+        66,
+        67,
+        68,
+        69
+      ]
+    },
+    {
+      "progress": 0.14510104060173035,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998643398284912,
+        6.302301335381344e-05,
+        7.253904914250597e-05
+      ],
+      "progress_variance": 0.015021558851003647,
+      "progress_entropy": 3.2776083946228027,
+      "query_index": 70,
+      "history_indices": [
+        66,
+        67,
+        68,
+        69,
+        70
+      ],
+      "timestamp": 7.0,
+      "source_frame_index": 70,
+      "source_frame_timestamp": 7.0,
+      "history_native_indices": [
+        66,
+        67,
+        68,
+        69,
+        70
+      ]
+    },
+    {
+      "progress": 0.1469767838716507,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998001456260681,
+        5.561404032050632e-05,
+        0.00014425182598643005
+      ],
+      "progress_variance": 0.014946918934583664,
+      "progress_entropy": 3.2830538749694824,
+      "query_index": 71,
+      "history_indices": [
+        67,
+        68,
+        69,
+        70,
+        71
+      ],
+      "timestamp": 7.1,
+      "source_frame_index": 71,
+      "source_frame_timestamp": 7.1,
+      "history_native_indices": [
+        67,
+        68,
+        69,
+        70,
+        71
+      ]
+    },
+    {
+      "progress": 0.1505112648010254,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997990727424622,
+        4.985204941476695e-05,
+        0.00015117446309886873
+      ],
+      "progress_variance": 0.015408448874950409,
+      "progress_entropy": 3.305863380432129,
+      "query_index": 72,
+      "history_indices": [
+        68,
+        69,
+        70,
+        71,
+        72
+      ],
+      "timestamp": 7.2,
+      "source_frame_index": 72,
+      "source_frame_timestamp": 7.2,
+      "history_native_indices": [
+        68,
+        69,
+        70,
+        71,
+        72
+      ]
+    },
+    {
+      "progress": 0.14166024327278137,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997461438179016,
+        4.068589987582527e-05,
+        0.0002131788933183998
+      ],
+      "progress_variance": 0.016329970210790634,
+      "progress_entropy": 3.283573627471924,
+      "query_index": 73,
+      "history_indices": [
+        69,
+        70,
+        71,
+        72,
+        73
+      ],
+      "timestamp": 7.3,
+      "source_frame_index": 73,
+      "source_frame_timestamp": 7.3,
+      "history_native_indices": [
+        69,
+        70,
+        71,
+        72,
+        73
+      ]
+    },
+    {
+      "progress": 0.15173986554145813,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998062252998352,
+        0.00010070462303701788,
+        9.313655755249783e-05
+      ],
+      "progress_variance": 0.016428422182798386,
+      "progress_entropy": 3.334918260574341,
+      "query_index": 74,
+      "history_indices": [
+        70,
+        71,
+        72,
+        73,
+        74
+      ],
+      "timestamp": 7.4,
+      "source_frame_index": 74,
+      "source_frame_timestamp": 7.4,
+      "history_native_indices": [
+        70,
+        71,
+        72,
+        73,
+        74
+      ]
+    },
+    {
+      "progress": 0.150661900639534,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998643398284912,
+        4.5393771870294586e-05,
+        9.027629857882857e-05
+      ],
+      "progress_variance": 0.016035858541727066,
+      "progress_entropy": 3.3203253746032715,
+      "query_index": 75,
+      "history_indices": [
+        71,
+        72,
+        73,
+        74,
+        75
+      ],
+      "timestamp": 7.5,
+      "source_frame_index": 75,
+      "source_frame_timestamp": 7.5,
+      "history_native_indices": [
+        71,
+        72,
+        73,
+        74,
+        75
+      ]
+    },
+    {
+      "progress": 0.13624541461467743,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9986959099769592,
+        9.30331225390546e-05,
+        0.0012111938558518887
+      ],
+      "progress_variance": 0.013782136142253876,
+      "progress_entropy": 3.242889881134033,
+      "query_index": 76,
+      "history_indices": [
+        72,
+        73,
+        74,
+        75,
+        76
+      ],
+      "timestamp": 7.6,
+      "source_frame_index": 76,
+      "source_frame_timestamp": 7.6,
+      "history_native_indices": [
+        72,
+        73,
+        74,
+        75,
+        76
+      ]
+    },
+    {
+      "progress": 0.14023253321647644,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.8844558000564575,
+        0.00043169871787540615,
+        0.11511252075433731
+      ],
+      "progress_variance": 0.012861162424087524,
+      "progress_entropy": 3.205968141555786,
+      "query_index": 77,
+      "history_indices": [
+        73,
+        74,
+        75,
+        76,
+        77
+      ],
+      "timestamp": 7.7,
+      "source_frame_index": 77,
+      "source_frame_timestamp": 7.7,
+      "history_native_indices": [
+        73,
+        74,
+        75,
+        76,
+        77
+      ]
+    },
+    {
+      "progress": 0.10218475759029388,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9729647040367126,
+        0.00028357541305013,
+        0.026751695200800896
+      ],
+      "progress_variance": 0.014438753947615623,
+      "progress_entropy": 3.0223145484924316,
+      "query_index": 78,
+      "history_indices": [
+        74,
+        75,
+        76,
+        77,
+        78
+      ],
+      "timestamp": 7.8,
+      "source_frame_index": 78,
+      "source_frame_timestamp": 7.8,
+      "history_native_indices": [
+        74,
+        75,
+        76,
+        77,
+        78
+      ]
+    },
+    {
+      "progress": 0.09304378181695938,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9900051951408386,
+        0.000136297574499622,
+        0.00985851138830185
+      ],
+      "progress_variance": 0.01571912132203579,
+      "progress_entropy": 2.9670376777648926,
+      "query_index": 79,
+      "history_indices": [
+        75,
+        76,
+        77,
+        78,
+        79
+      ],
+      "timestamp": 7.9,
+      "source_frame_index": 79,
+      "source_frame_timestamp": 7.9,
+      "history_native_indices": [
+        75,
+        76,
+        77,
+        78,
+        79
+      ]
+    },
+    {
+      "progress": 0.11234821379184723,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998612403869629,
+        5.649328522849828e-05,
+        8.219724259106442e-05
+      ],
+      "progress_variance": 0.012488295324146748,
+      "progress_entropy": 3.0273520946502686,
+      "query_index": 80,
+      "history_indices": [
+        76,
+        77,
+        78,
+        79,
+        80
+      ],
+      "timestamp": 8.0,
+      "source_frame_index": 80,
+      "source_frame_timestamp": 8.0,
+      "history_native_indices": [
+        76,
+        77,
+        78,
+        79,
+        80
+      ]
+    },
+    {
+      "progress": 0.10292910784482956,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998544454574585,
+        6.204531382536516e-05,
+        8.34910970297642e-05
+      ],
+      "progress_variance": 0.013448314741253853,
+      "progress_entropy": 3.0088999271392822,
+      "query_index": 81,
+      "history_indices": [
+        77,
+        78,
+        79,
+        80,
+        81
+      ],
+      "timestamp": 8.1,
+      "source_frame_index": 81,
+      "source_frame_timestamp": 8.1,
+      "history_native_indices": [
+        77,
+        78,
+        79,
+        80,
+        81
+      ]
+    },
+    {
+      "progress": 0.10224467515945435,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998180270195007,
+        7.483821536879987e-05,
+        0.00010720078716985881
+      ],
+      "progress_variance": 0.01358080469071865,
+      "progress_entropy": 3.0085132122039795,
+      "query_index": 82,
+      "history_indices": [
+        78,
+        79,
+        80,
+        81,
+        82
+      ],
+      "timestamp": 8.2,
+      "source_frame_index": 82,
+      "source_frame_timestamp": 8.2,
+      "history_native_indices": [
+        78,
+        79,
+        80,
+        81,
+        82
+      ]
+    },
+    {
+      "progress": 0.10340653359889984,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998164772987366,
+        6.013409438310191e-05,
+        0.00012338714441284537
+      ],
+      "progress_variance": 0.013457393273711205,
+      "progress_entropy": 3.0109620094299316,
+      "query_index": 83,
+      "history_indices": [
+        79,
+        80,
+        81,
+        82,
+        83
+      ],
+      "timestamp": 8.3,
+      "source_frame_index": 83,
+      "source_frame_timestamp": 8.3,
+      "history_native_indices": [
+        79,
+        80,
+        81,
+        82,
+        83
+      ]
+    },
+    {
+      "progress": 0.10121798515319824,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9996864795684814,
+        6.813199433963746e-05,
+        0.0002453527704346925
+      ],
+      "progress_variance": 0.01362665556371212,
+      "progress_entropy": 3.005577325820923,
+      "query_index": 84,
+      "history_indices": [
+        80,
+        81,
+        82,
+        83,
+        84
+      ],
+      "timestamp": 8.4,
+      "source_frame_index": 84,
+      "source_frame_timestamp": 8.4,
+      "history_native_indices": [
+        80,
+        81,
+        82,
+        83,
+        84
+      ]
+    },
+    {
+      "progress": 0.1049852967262268,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997740387916565,
+        6.50177025818266e-05,
+        0.00016092036094050854
+      ],
+      "progress_variance": 0.013427343219518661,
+      "progress_entropy": 3.0236549377441406,
+      "query_index": 85,
+      "history_indices": [
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "timestamp": 8.5,
+      "source_frame_index": 85,
+      "source_frame_timestamp": 8.5,
+      "history_native_indices": [
+        81,
+        82,
+        83,
+        84,
+        85
+      ]
+    },
+    {
+      "progress": 0.11124534159898758,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998278617858887,
+        7.141182868508622e-05,
+        0.00010070680582430214
+      ],
+      "progress_variance": 0.013389885425567627,
+      "progress_entropy": 3.0477240085601807,
+      "query_index": 86,
+      "history_indices": [
+        82,
+        83,
+        84,
+        85,
+        86
+      ],
+      "timestamp": 8.6,
+      "source_frame_index": 86,
+      "source_frame_timestamp": 8.6,
+      "history_native_indices": [
+        82,
+        83,
+        84,
+        85,
+        86
+      ]
+    },
+    {
+      "progress": 0.10965755581855774,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998158812522888,
+        8.348787378054112e-05,
+        0.00010070559801533818
+      ],
+      "progress_variance": 0.013294938020408154,
+      "progress_entropy": 3.0397889614105225,
+      "query_index": 87,
+      "history_indices": [
+        83,
+        84,
+        85,
+        86,
+        87
+      ],
+      "timestamp": 8.7,
+      "source_frame_index": 87,
+      "source_frame_timestamp": 8.7,
+      "history_native_indices": [
+        83,
+        84,
+        85,
+        86,
+        87
+      ]
+    },
+    {
+      "progress": 0.11468902230262756,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998680353164673,
+        7.72176863392815e-05,
+        5.47555428056512e-05
+      ],
+      "progress_variance": 0.012350231409072876,
+      "progress_entropy": 3.0357506275177,
+      "query_index": 88,
+      "history_indices": [
+        84,
+        85,
+        86,
+        87,
+        88
+      ],
+      "timestamp": 8.8,
+      "source_frame_index": 88,
+      "source_frame_timestamp": 8.8,
+      "history_native_indices": [
+        84,
+        85,
+        86,
+        87,
+        88
+      ]
+    },
+    {
+      "progress": 0.1131567656993866,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998301267623901,
+        9.027320629684255e-05,
+        7.966582052176818e-05
+      ],
+      "progress_variance": 0.012991168536245823,
+      "progress_entropy": 3.057803153991699,
+      "query_index": 89,
+      "history_indices": [
+        85,
+        86,
+        87,
+        88,
+        89
+      ],
+      "timestamp": 8.9,
+      "source_frame_index": 89,
+      "source_frame_timestamp": 8.9,
+      "history_native_indices": [
+        85,
+        86,
+        87,
+        88,
+        89
+      ]
+    },
+    {
+      "progress": 0.11522725224494934,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998273849487305,
+        9.169455734081566e-05,
+        8.092015195870772e-05
+      ],
+      "progress_variance": 0.012986348010599613,
+      "progress_entropy": 3.072605609893799,
+      "query_index": 90,
+      "history_indices": [
+        86,
+        87,
+        88,
+        89,
+        90
+      ],
+      "timestamp": 9.0,
+      "source_frame_index": 90,
+      "source_frame_timestamp": 9.0,
+      "history_native_indices": [
+        86,
+        87,
+        88,
+        89,
+        90
+      ]
+    },
+    {
+      "progress": 0.11864708364009857,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997931122779846,
+        0.0001355111162411049,
+        7.140934030758217e-05
+      ],
+      "progress_variance": 0.013325094245374203,
+      "progress_entropy": 3.094869613647461,
+      "query_index": 91,
+      "history_indices": [
+        87,
+        88,
+        89,
+        90,
+        91
+      ],
+      "timestamp": 9.1,
+      "source_frame_index": 91,
+      "source_frame_timestamp": 9.1,
+      "history_native_indices": [
+        87,
+        88,
+        89,
+        90,
+        91
+      ]
+    },
+    {
+      "progress": 0.12581798434257507,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998860359191895,
+        5.920592229813337e-05,
+        5.4756528697907925e-05
+      ],
+      "progress_variance": 0.012344098649919033,
+      "progress_entropy": 3.0758860111236572,
+      "query_index": 92,
+      "history_indices": [
+        88,
+        89,
+        90,
+        91,
+        92
+      ],
+      "timestamp": 9.2,
+      "source_frame_index": 92,
+      "source_frame_timestamp": 9.2,
+      "history_native_indices": [
+        88,
+        89,
+        90,
+        91,
+        92
+      ]
+    },
+    {
+      "progress": 0.13030242919921875,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998636245727539,
+        8.480666292598471e-05,
+        5.143784801475704e-05
+      ],
+      "progress_variance": 0.012291179969906807,
+      "progress_entropy": 3.1039607524871826,
+      "query_index": 93,
+      "history_indices": [
+        89,
+        90,
+        91,
+        92,
+        93
+      ],
+      "timestamp": 9.3,
+      "source_frame_index": 93,
+      "source_frame_timestamp": 9.3,
+      "history_native_indices": [
+        89,
+        90,
+        91,
+        92,
+        93
+      ]
+    },
+    {
+      "progress": 0.12900331616401672,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998867511749268,
+        6.921878957655281e-05,
+        4.39981376985088e-05
+      ],
+      "progress_variance": 0.011955268681049347,
+      "progress_entropy": 3.08734130859375,
+      "query_index": 94,
+      "history_indices": [
+        90,
+        91,
+        92,
+        93,
+        94
+      ],
+      "timestamp": 9.4,
+      "source_frame_index": 94,
+      "source_frame_timestamp": 9.4,
+      "history_native_indices": [
+        90,
+        91,
+        92,
+        93,
+        94
+      ]
+    },
+    {
+      "progress": 0.1340043544769287,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.99988853931427,
+        6.604914233321324e-05,
+        4.539487053989433e-05
+      ],
+      "progress_variance": 0.012707025744020939,
+      "progress_entropy": 3.1480512619018555,
+      "query_index": 95,
+      "history_indices": [
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "timestamp": 9.5,
+      "source_frame_index": 95,
+      "source_frame_timestamp": 9.5,
+      "history_native_indices": [
+        91,
+        92,
+        93,
+        94,
+        95
+      ]
+    },
+    {
+      "progress": 0.13688558340072632,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998544454574585,
+        9.16970384423621e-05,
+        5.390590013121255e-05
+      ],
+      "progress_variance": 0.013057379983365536,
+      "progress_entropy": 3.175997734069824,
+      "query_index": 96,
+      "history_indices": [
+        92,
+        93,
+        94,
+        95,
+        96
+      ],
+      "timestamp": 9.6,
+      "source_frame_index": 96,
+      "source_frame_timestamp": 9.6,
+      "history_native_indices": [
+        92,
+        93,
+        94,
+        95,
+        96
+      ]
+    },
+    {
+      "progress": 0.14278194308280945,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999897837638855,
+        4.9084017518907785e-05,
+        5.307247556629591e-05
+      ],
+      "progress_variance": 0.013054496608674526,
+      "progress_entropy": 3.1928279399871826,
+      "query_index": 97,
+      "history_indices": [
+        93,
+        94,
+        95,
+        96,
+        97
+      ],
+      "timestamp": 9.7,
+      "source_frame_index": 97,
+      "source_frame_timestamp": 9.7,
+      "history_native_indices": [
+        93,
+        94,
+        95,
+        96,
+        97
+      ]
+    },
+    {
+      "progress": 0.14439517259597778,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999840259552002,
+        9.460646833758801e-05,
+        6.50220099487342e-05
+      ],
+      "progress_variance": 0.012924546375870705,
+      "progress_entropy": 3.18881893157959,
+      "query_index": 98,
+      "history_indices": [
+        94,
+        95,
+        96,
+        97,
+        98
+      ],
+      "timestamp": 9.8,
+      "source_frame_index": 98,
+      "source_frame_timestamp": 9.8,
+      "history_native_indices": [
+        94,
+        95,
+        96,
+        97,
+        98
+      ]
+    },
+    {
+      "progress": 0.12931950390338898,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998573064804077,
+        6.302256952039897e-05,
+        7.966798875713721e-05
+      ],
+      "progress_variance": 0.016206271946430206,
+      "progress_entropy": 3.241182804107666,
+      "query_index": 99,
+      "history_indices": [
+        95,
+        96,
+        97,
+        98,
+        99
+      ],
+      "timestamp": 9.9,
+      "source_frame_index": 99,
+      "source_frame_timestamp": 9.9,
+      "history_native_indices": [
+        95,
+        96,
+        97,
+        98,
+        99
+      ]
+    },
+    {
+      "progress": 0.13061173260211945,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998582601547241,
+        7.030682172626257e-05,
+        7.141399692045525e-05
+      ],
+      "progress_variance": 0.017017453908920288,
+      "progress_entropy": 3.2509045600891113,
+      "query_index": 100,
+      "history_indices": [
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "timestamp": 10.0,
+      "source_frame_index": 100,
+      "source_frame_timestamp": 10.0,
+      "history_native_indices": [
+        96,
+        97,
+        98,
+        99,
+        100
+      ]
+    },
+    {
+      "progress": 0.12352854013442993,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999859094619751,
+        6.604719965253025e-05,
+        7.484129309887066e-05
+      ],
+      "progress_variance": 0.01764782890677452,
+      "progress_entropy": 3.2349853515625,
+      "query_index": 101,
+      "history_indices": [
+        97,
+        98,
+        99,
+        100,
+        101
+      ],
+      "timestamp": 10.1,
+      "source_frame_index": 101,
+      "source_frame_timestamp": 10.1,
+      "history_native_indices": [
+        97,
+        98,
+        99,
+        100,
+        101
+      ]
+    },
+    {
+      "progress": 0.11616990715265274,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998563528060913,
+        6.013649544911459e-05,
+        8.349125710083172e-05
+      ],
+      "progress_variance": 0.017690662294626236,
+      "progress_entropy": 3.203810214996338,
+      "query_index": 102,
+      "history_indices": [
+        98,
+        99,
+        100,
+        101,
+        102
+      ],
+      "timestamp": 10.2,
+      "source_frame_index": 102,
+      "source_frame_timestamp": 10.2,
+      "history_native_indices": [
+        98,
+        99,
+        100,
+        101,
+        102
+      ]
+    },
+    {
+      "progress": 0.11714110523462296,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998201727867126,
+        8.219386654673144e-05,
+        9.760763350641355e-05
+      ],
+      "progress_variance": 0.01788388565182686,
+      "progress_entropy": 3.214639186859131,
+      "query_index": 103,
+      "history_indices": [
+        99,
+        100,
+        101,
+        102,
+        103
+      ],
+      "timestamp": 10.3,
+      "source_frame_index": 103,
+      "source_frame_timestamp": 10.3,
+      "history_native_indices": [
+        99,
+        100,
+        101,
+        102,
+        103
+      ]
+    },
+    {
+      "progress": 0.11783286929130554,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998573064804077,
+        5.649306331179105e-05,
+        8.614164107711986e-05
+      ],
+      "progress_variance": 0.01731313019990921,
+      "progress_entropy": 3.2098445892333984,
+      "query_index": 104,
+      "history_indices": [
+        100,
+        101,
+        102,
+        103,
+        104
+      ],
+      "timestamp": 10.4,
+      "source_frame_index": 104,
+      "source_frame_timestamp": 10.4,
+      "history_native_indices": [
+        100,
+        101,
+        102,
+        103,
+        104
+      ]
+    },
+    {
+      "progress": 0.12556280195713043,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998314380645752,
+        7.966592238517478e-05,
+        8.887377043720335e-05
+      ],
+      "progress_variance": 0.018933109939098358,
+      "progress_entropy": 3.279597282409668,
+      "query_index": 105,
+      "history_indices": [
+        101,
+        102,
+        103,
+        104,
+        105
+      ],
+      "timestamp": 10.5,
+      "source_frame_index": 105,
+      "source_frame_timestamp": 10.5,
+      "history_native_indices": [
+        101,
+        102,
+        103,
+        104,
+        105
+      ]
+    },
+    {
+      "progress": 0.12930604815483093,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999866247177124,
+        5.14379826199729e-05,
+        8.219765732064843e-05
+      ],
+      "progress_variance": 0.01797572523355484,
+      "progress_entropy": 3.2768256664276123,
+      "query_index": 106,
+      "history_indices": [
+        102,
+        103,
+        104,
+        105,
+        106
+      ],
+      "timestamp": 10.6,
+      "source_frame_index": 106,
+      "source_frame_timestamp": 10.6,
+      "history_native_indices": [
+        102,
+        103,
+        104,
+        105,
+        106
+      ]
+    },
+    {
+      "progress": 0.13160324096679688,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998162388801575,
+        8.613809768576175e-05,
+        9.760724788066e-05
+      ],
+      "progress_variance": 0.018610864877700806,
+      "progress_entropy": 3.307145118713379,
+      "query_index": 107,
+      "history_indices": [
+        103,
+        104,
+        105,
+        106,
+        107
+      ],
+      "timestamp": 10.7,
+      "source_frame_index": 107,
+      "source_frame_timestamp": 10.7,
+      "history_native_indices": [
+        103,
+        104,
+        105,
+        106,
+        107
+      ]
+    },
+    {
+      "progress": 0.13036805391311646,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998377561569214,
+        6.302133988356218e-05,
+        9.91464767139405e-05
+      ],
+      "progress_variance": 0.017653968185186386,
+      "progress_entropy": 3.279344081878662,
+      "query_index": 108,
+      "history_indices": [
+        104,
+        105,
+        106,
+        107,
+        108
+      ],
+      "timestamp": 10.8,
+      "source_frame_index": 108,
+      "source_frame_timestamp": 10.8,
+      "history_native_indices": [
+        104,
+        105,
+        106,
+        107,
+        108
+      ]
+    },
+    {
+      "progress": 0.14250296354293823,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997428059577942,
+        5.224156120675616e-05,
+        0.00020501145627349615
+      ],
+      "progress_variance": 0.015240032225847244,
+      "progress_entropy": 3.2778806686401367,
+      "query_index": 109,
+      "history_indices": [
+        105,
+        106,
+        107,
+        108,
+        109
+      ],
+      "timestamp": 10.9,
+      "source_frame_index": 109,
+      "source_frame_timestamp": 10.9,
+      "history_native_indices": [
+        105,
+        106,
+        107,
+        108,
+        109
+      ]
+    },
+    {
+      "progress": 0.13784846663475037,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997286200523376,
+        7.720692519797012e-05,
+        0.0001940981746884063
+      ],
+      "progress_variance": 0.016284478828310966,
+      "progress_entropy": 3.2801833152770996,
+      "query_index": 110,
+      "history_indices": [
+        106,
+        107,
+        108,
+        109,
+        110
+      ],
+      "timestamp": 11.0,
+      "source_frame_index": 110,
+      "source_frame_timestamp": 11.0,
+      "history_native_indices": [
+        106,
+        107,
+        108,
+        109,
+        110
+      ]
+    },
+    {
+      "progress": 0.1377272754907608,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998001456260681,
+        7.253438525367528e-05,
+        0.00012730179878417403
+      ],
+      "progress_variance": 0.014926661737263203,
+      "progress_entropy": 3.243198871612549,
+      "query_index": 111,
+      "history_indices": [
+        107,
+        108,
+        109,
+        110,
+        111
+      ],
+      "timestamp": 11.1,
+      "source_frame_index": 111,
+      "source_frame_timestamp": 11.1,
+      "history_native_indices": [
+        107,
+        108,
+        109,
+        110,
+        111
+      ]
+    },
+    {
+      "progress": 0.13169416785240173,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998162388801575,
+        7.141099194996059e-05,
+        0.00011234526027692482
+      ],
+      "progress_variance": 0.013864106498658657,
+      "progress_entropy": 3.1866374015808105,
+      "query_index": 112,
+      "history_indices": [
+        108,
+        109,
+        110,
+        111,
+        112
+      ],
+      "timestamp": 11.2,
+      "source_frame_index": 112,
+      "source_frame_timestamp": 11.2,
+      "history_native_indices": [
+        108,
+        109,
+        110,
+        111,
+        112
+      ]
+    },
+    {
+      "progress": 0.12529537081718445,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998205304145813,
+        6.708470027660951e-05,
+        0.00011234574049012735
+      ],
+      "progress_variance": 0.014598963782191277,
+      "progress_entropy": 3.183661460876465,
+      "query_index": 113,
+      "history_indices": [
+        109,
+        110,
+        111,
+        112,
+        113
+      ],
+      "timestamp": 11.3,
+      "source_frame_index": 113,
+      "source_frame_timestamp": 11.3,
+      "history_native_indices": [
+        109,
+        110,
+        111,
+        112,
+        113
+      ]
+    },
+    {
+      "progress": 0.11958643049001694,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9994674324989319,
+        0.00013129909348208457,
+        0.00040128236287273467
+      ],
+      "progress_variance": 0.014046557247638702,
+      "progress_entropy": 3.1368842124938965,
+      "query_index": 114,
+      "history_indices": [
+        110,
+        111,
+        112,
+        113,
+        114
+      ],
+      "timestamp": 11.4,
+      "source_frame_index": 114,
+      "source_frame_timestamp": 11.4,
+      "history_native_indices": [
+        110,
+        111,
+        112,
+        113,
+        114
+      ]
+    },
+    {
+      "progress": 0.12902328372001648,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9994103908538818,
+        9.023530583363026e-05,
+        0.0004993755137547851
+      ],
+      "progress_variance": 0.013661368750035763,
+      "progress_entropy": 3.1761205196380615,
+      "query_index": 115,
+      "history_indices": [
+        111,
+        112,
+        113,
+        114,
+        115
+      ],
+      "timestamp": 11.5,
+      "source_frame_index": 115,
+      "source_frame_timestamp": 11.5,
+      "history_native_indices": [
+        111,
+        112,
+        113,
+        114,
+        115
+      ]
+    },
+    {
+      "progress": 0.12679822742938995,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9994910955429077,
+        9.166371455648914e-05,
+        0.0004172775079496205
+      ],
+      "progress_variance": 0.013140933588147163,
+      "progress_entropy": 3.151495933532715,
+      "query_index": 116,
+      "history_indices": [
+        112,
+        113,
+        114,
+        115,
+        116
+      ],
+      "timestamp": 11.6,
+      "source_frame_index": 116,
+      "source_frame_timestamp": 11.6,
+      "history_native_indices": [
+        112,
+        113,
+        114,
+        115,
+        116
+      ]
+    },
+    {
+      "progress": 0.12274901568889618,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999777615070343,
+        6.400992424460128e-05,
+        0.0001584260753588751
+      ],
+      "progress_variance": 0.013613423332571983,
+      "progress_entropy": 3.147329330444336,
+      "query_index": 117,
+      "history_indices": [
+        113,
+        114,
+        115,
+        116,
+        117
+      ],
+      "timestamp": 11.7,
+      "source_frame_index": 117,
+      "source_frame_timestamp": 11.7,
+      "history_native_indices": [
+        113,
+        114,
+        115,
+        116,
+        117
+      ]
+    },
+    {
+      "progress": 0.1221737489104271,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998445510864258,
+        6.92158646415919e-05,
+        8.614054240752012e-05
+      ],
+      "progress_variance": 0.013058790937066078,
+      "progress_entropy": 3.110478162765503,
+      "query_index": 118,
+      "history_indices": [
+        114,
+        115,
+        116,
+        117,
+        118
+      ],
+      "timestamp": 11.8,
+      "source_frame_index": 118,
+      "source_frame_timestamp": 11.8,
+      "history_native_indices": [
+        114,
+        115,
+        116,
+        117,
+        118
+      ]
+    },
+    {
+      "progress": 0.11882425844669342,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998623132705688,
+        5.9204518038313836e-05,
+        7.843324419809505e-05
+      ],
+      "progress_variance": 0.012602677568793297,
+      "progress_entropy": 3.0747060775756836,
+      "query_index": 119,
+      "history_indices": [
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "timestamp": 11.9,
+      "source_frame_index": 119,
+      "source_frame_timestamp": 11.9,
+      "history_native_indices": [
+        115,
+        116,
+        117,
+        118,
+        119
+      ]
+    },
+    {
+      "progress": 0.12009526044130325,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998313188552856,
+        7.843081402825192e-05,
+        9.027331543620676e-05
+      ],
+      "progress_variance": 0.0124000683426857,
+      "progress_entropy": 3.0531249046325684,
+      "query_index": 120,
+      "history_indices": [
+        116,
+        117,
+        118,
+        119,
+        120
+      ],
+      "timestamp": 12.0,
+      "source_frame_index": 120,
+      "source_frame_timestamp": 12.0,
+      "history_native_indices": [
+        116,
+        117,
+        118,
+        119,
+        120
+      ]
+    },
+    {
+      "progress": 0.12290335446596146,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998588562011719,
+        6.502322503365576e-05,
+        7.601984543725848e-05
+      ],
+      "progress_variance": 0.012520596385002136,
+      "progress_entropy": 3.085738182067871,
+      "query_index": 121,
+      "history_indices": [
+        117,
+        118,
+        119,
+        120,
+        121
+      ],
+      "timestamp": 12.1,
+      "source_frame_index": 121,
+      "source_frame_timestamp": 12.1,
+      "history_native_indices": [
+        117,
+        118,
+        119,
+        120,
+        121
+      ]
+    },
+    {
+      "progress": 0.12529687583446503,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999840259552002,
+        8.480468386551365e-05,
+        7.483988156309351e-05
+      ],
+      "progress_variance": 0.01257449109107256,
+      "progress_entropy": 3.0973408222198486,
+      "query_index": 122,
+      "history_indices": [
+        118,
+        119,
+        120,
+        121,
+        122
+      ],
+      "timestamp": 12.2,
+      "source_frame_index": 122,
+      "source_frame_timestamp": 12.2,
+      "history_native_indices": [
+        118,
+        119,
+        120,
+        121,
+        122
+      ]
+    },
+    {
+      "progress": 0.129842609167099,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998582601547241,
+        7.966806151671335e-05,
+        6.204554665600881e-05
+      ],
+      "progress_variance": 0.012478947639465332,
+      "progress_entropy": 3.1069607734680176,
+      "query_index": 123,
+      "history_indices": [
+        119,
+        120,
+        121,
+        122,
+        123
+      ],
+      "timestamp": 12.3,
+      "source_frame_index": 123,
+      "source_frame_timestamp": 12.3,
+      "history_native_indices": [
+        119,
+        120,
+        121,
+        122,
+        123
+      ]
+    },
+    {
+      "progress": 0.1280645728111267,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998422861099243,
+        0.00010554135224083439,
+        5.2246759878471494e-05
+      ],
+      "progress_variance": 0.012224825099110603,
+      "progress_entropy": 3.0751147270202637,
+      "query_index": 124,
+      "history_indices": [
+        120,
+        121,
+        122,
+        123,
+        124
+      ],
+      "timestamp": 12.4,
+      "source_frame_index": 124,
+      "source_frame_timestamp": 12.4,
+      "history_native_indices": [
+        120,
+        121,
+        122,
+        123,
+        124
+      ]
+    },
+    {
+      "progress": 0.13546890020370483,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999876856803894,
+        7.843438652344048e-05,
+        4.4690565118798986e-05
+      ],
+      "progress_variance": 0.011616114526987076,
+      "progress_entropy": 3.0931339263916016,
+      "query_index": 125,
+      "history_indices": [
+        121,
+        122,
+        123,
+        124,
+        125
+      ],
+      "timestamp": 12.5,
+      "source_frame_index": 125,
+      "source_frame_timestamp": 12.5,
+      "history_native_indices": [
+        121,
+        122,
+        123,
+        124,
+        125
+      ]
+    },
+    {
+      "progress": 0.1323949694633484,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998418092727661,
+        9.609645348973572e-05,
+        6.204452802194282e-05
+      ],
+      "progress_variance": 0.012301316484808922,
+      "progress_entropy": 3.125075340270996,
+      "query_index": 126,
+      "history_indices": [
+        122,
+        123,
+        124,
+        125,
+        126
+      ],
+      "timestamp": 12.6,
+      "source_frame_index": 126,
+      "source_frame_timestamp": 12.6,
+      "history_native_indices": [
+        122,
+        123,
+        124,
+        125,
+        126
+      ]
+    },
+    {
+      "progress": 0.1439426690340042,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999836802482605,
+        0.000103904509160202,
+        5.920300827710889e-05
+      ],
+      "progress_variance": 0.011992346495389938,
+      "progress_entropy": 3.146688222885132,
+      "query_index": 127,
+      "history_indices": [
+        123,
+        124,
+        125,
+        126,
+        127
+      ],
+      "timestamp": 12.7,
+      "source_frame_index": 127,
+      "source_frame_timestamp": 12.7,
+      "history_native_indices": [
+        123,
+        124,
+        125,
+        126,
+        127
+      ]
+    },
+    {
+      "progress": 0.12938280403614044,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998236298561096,
+        0.00011234608973609284,
+        6.401287100743502e-05
+      ],
+      "progress_variance": 0.014567636884748936,
+      "progress_entropy": 3.208343982696533,
+      "query_index": 128,
+      "history_indices": [
+        124,
+        125,
+        126,
+        127,
+        128
+      ],
+      "timestamp": 12.8,
+      "source_frame_index": 128,
+      "source_frame_timestamp": 12.8,
+      "history_native_indices": [
+        124,
+        125,
+        126,
+        127,
+        128
+      ]
+    },
+    {
+      "progress": 0.1294342279434204,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998470544815063,
+        9.460710862185806e-05,
+        5.828575012856163e-05
+      ],
+      "progress_variance": 0.014800650998950005,
+      "progress_entropy": 3.217564105987549,
+      "query_index": 129,
+      "history_indices": [
+        125,
+        126,
+        127,
+        128,
+        129
+      ],
+      "timestamp": 12.9,
+      "source_frame_index": 129,
+      "source_frame_timestamp": 12.9,
+      "history_native_indices": [
+        125,
+        126,
+        127,
+        128,
+        129
+      ]
+    },
+    {
+      "progress": 0.12546777725219727,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998573064804077,
+        8.614164107711986e-05,
+        5.649306331179105e-05
+      ],
+      "progress_variance": 0.015126489102840424,
+      "progress_entropy": 3.2021312713623047,
+      "query_index": 130,
+      "history_indices": [
+        126,
+        127,
+        128,
+        129,
+        130
+      ],
+      "timestamp": 13.0,
+      "source_frame_index": 130,
+      "source_frame_timestamp": 13.0,
+      "history_native_indices": [
+        126,
+        127,
+        128,
+        129,
+        130
+      ]
+    },
+    {
+      "progress": 0.1300937831401825,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998822212219238,
+        6.302414112724364e-05,
+        5.475631769513711e-05
+      ],
+      "progress_variance": 0.01633446291089058,
+      "progress_entropy": 3.2419381141662598,
+      "query_index": 131,
+      "history_indices": [
+        127,
+        128,
+        129,
+        130,
+        131
+      ],
+      "timestamp": 13.1,
+      "source_frame_index": 131,
+      "source_frame_timestamp": 13.1,
+      "history_native_indices": [
+        127,
+        128,
+        129,
+        130,
+        131
+      ]
+    },
+    {
+      "progress": 0.12605376541614532,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999840497970581,
+        8.21955400169827e-05,
+        7.721556175965816e-05
+      ],
+      "progress_variance": 0.016906078904867172,
+      "progress_entropy": 3.24680233001709,
+      "query_index": 132,
+      "history_indices": [
+        128,
+        129,
+        130,
+        131,
+        132
+      ],
+      "timestamp": 13.2,
+      "source_frame_index": 132,
+      "source_frame_timestamp": 13.2,
+      "history_native_indices": [
+        128,
+        129,
+        130,
+        131,
+        132
+      ]
+    },
+    {
+      "progress": 0.12208914756774902,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998584985733032,
+        4.539350629784167e-05,
+        9.609805420041084e-05
+      ],
+      "progress_variance": 0.017773058265447617,
+      "progress_entropy": 3.2454628944396973,
+      "query_index": 133,
+      "history_indices": [
+        129,
+        130,
+        131,
+        132,
+        133
+      ],
+      "timestamp": 13.3,
+      "source_frame_index": 133,
+      "source_frame_timestamp": 13.3,
+      "history_native_indices": [
+        129,
+        130,
+        131,
+        132,
+        133
+      ]
+    },
+    {
+      "progress": 0.12270770221948624,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997902512550354,
+        7.842758350307122e-05,
+        0.00013134149776306003
+      ],
+      "progress_variance": 0.018812157213687897,
+      "progress_entropy": 3.267726421356201,
+      "query_index": 134,
+      "history_indices": [
+        130,
+        131,
+        132,
+        133,
+        134
+      ],
+      "timestamp": 13.4,
+      "source_frame_index": 134,
+      "source_frame_timestamp": 13.4,
+      "history_native_indices": [
+        130,
+        131,
+        132,
+        133,
+        134
+      ]
+    },
+    {
+      "progress": 0.12031182646751404,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998327493667603,
+        5.8284913393436e-05,
+        0.00010889056284213439
+      ],
+      "progress_variance": 0.01894821599125862,
+      "progress_entropy": 3.258833885192871,
+      "query_index": 135,
+      "history_indices": [
+        131,
+        132,
+        133,
+        134,
+        135
+      ],
+      "timestamp": 13.5,
+      "source_frame_index": 135,
+      "source_frame_timestamp": 13.5,
+      "history_native_indices": [
+        131,
+        132,
+        133,
+        134,
+        135
+      ]
+    },
+    {
+      "progress": 0.12121371179819107,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998369216918945,
+        7.966635894263163e-05,
+        8.348963456228375e-05
+      ],
+      "progress_variance": 0.01772308722138405,
+      "progress_entropy": 3.2341389656066895,
+      "query_index": 136,
+      "history_indices": [
+        132,
+        133,
+        134,
+        135,
+        136
+      ],
+      "timestamp": 13.6,
+      "source_frame_index": 136,
+      "source_frame_timestamp": 13.6,
+      "history_native_indices": [
+        132,
+        133,
+        134,
+        135,
+        136
+      ]
+    },
+    {
+      "progress": 0.12159304320812225,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998476505279541,
+        7.141324022086337e-05,
+        8.092179632512853e-05
+      ],
+      "progress_variance": 0.018549438565969467,
+      "progress_entropy": 3.2603659629821777,
+      "query_index": 137,
+      "history_indices": [
+        133,
+        134,
+        135,
+        136,
+        137
+      ],
+      "timestamp": 13.7,
+      "source_frame_index": 137,
+      "source_frame_timestamp": 13.7,
+      "history_native_indices": [
+        133,
+        134,
+        135,
+        136,
+        137
+      ]
+    },
+    {
+      "progress": 0.12131769955158234,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997984766960144,
+        9.60922843660228e-05,
+        0.00010553672473179176
+      ],
+      "progress_variance": 0.018036801367998123,
+      "progress_entropy": 3.2447338104248047,
+      "query_index": 138,
+      "history_indices": [
+        134,
+        135,
+        136,
+        137,
+        138
+      ],
+      "timestamp": 13.8,
+      "source_frame_index": 138,
+      "source_frame_timestamp": 13.8,
+      "history_native_indices": [
+        134,
+        135,
+        136,
+        137,
+        138
+      ]
+    },
+    {
+      "progress": 0.11753922700881958,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998180270195007,
+        7.483821536879987e-05,
+        0.00010720078716985881
+      ],
+      "progress_variance": 0.0182479415088892,
+      "progress_entropy": 3.2168922424316406,
+      "query_index": 139,
+      "history_indices": [
+        135,
+        136,
+        137,
+        138,
+        139
+      ],
+      "timestamp": 13.9,
+      "source_frame_index": 139,
+      "source_frame_timestamp": 13.9,
+      "history_native_indices": [
+        135,
+        136,
+        137,
+        138,
+        139
+      ]
+    },
+    {
+      "progress": 0.11787627637386322,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997910857200623,
+        7.966270641190931e-05,
+        0.00012930535012856126
+      ],
+      "progress_variance": 0.01770750992000103,
+      "progress_entropy": 3.206317901611328,
+      "query_index": 140,
+      "history_indices": [
+        136,
+        137,
+        138,
+        139,
+        140
+      ],
+      "timestamp": 14.0,
+      "source_frame_index": 140,
+      "source_frame_timestamp": 14.0,
+      "history_native_indices": [
+        136,
+        137,
+        138,
+        139,
+        140
+      ]
+    },
+    {
+      "progress": 0.12677477300167084,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998144507408142,
+        6.60442456137389e-05,
+        0.00011959068069700152
+      ],
+      "progress_variance": 0.01678924635052681,
+      "progress_entropy": 3.234539031982422,
+      "query_index": 141,
+      "history_indices": [
+        137,
+        138,
+        139,
+        140,
+        141
+      ],
+      "timestamp": 14.1,
+      "source_frame_index": 141,
+      "source_frame_timestamp": 14.1,
+      "history_native_indices": [
+        137,
+        138,
+        139,
+        140,
+        141
+      ]
+    },
+    {
+      "progress": 0.12515264749526978,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998409748077393,
+        5.8285393606638536e-05,
+        0.00010070813004858792
+      ],
+      "progress_variance": 0.017028186470270157,
+      "progress_entropy": 3.243412971496582,
+      "query_index": 142,
+      "history_indices": [
+        138,
+        139,
+        140,
+        141,
+        142
+      ],
+      "timestamp": 14.2,
+      "source_frame_index": 142,
+      "source_frame_timestamp": 14.2,
+      "history_native_indices": [
+        138,
+        139,
+        140,
+        141,
+        142
+      ]
+    },
+    {
+      "progress": 0.12209106236696243,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998168349266052,
+        4.9852933443617076e-05,
+        0.00013341337034944445
+      ],
+      "progress_variance": 0.01695091463625431,
+      "progress_entropy": 3.2177486419677734,
+      "query_index": 143,
+      "history_indices": [
+        139,
+        140,
+        141,
+        142,
+        143
+      ],
+      "timestamp": 14.3,
+      "source_frame_index": 143,
+      "source_frame_timestamp": 14.3,
+      "history_native_indices": [
+        139,
+        140,
+        141,
+        142,
+        143
+      ]
+    },
+    {
+      "progress": 0.12501338124275208,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998478889465332,
+        7.484044908778742e-05,
+        7.721613656030968e-05
+      ],
+      "progress_variance": 0.01799655891954899,
+      "progress_entropy": 3.255004405975342,
+      "query_index": 144,
+      "history_indices": [
+        140,
+        141,
+        142,
+        143,
+        144
+      ],
+      "timestamp": 14.4,
+      "source_frame_index": 144,
+      "source_frame_timestamp": 14.4,
+      "history_native_indices": [
+        140,
+        141,
+        142,
+        143,
+        144
+      ]
+    },
+    {
+      "progress": 0.12414232641458511,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998428821563721,
+        7.367978105321527e-05,
+        8.349012932740152e-05
+      ],
+      "progress_variance": 0.018351517617702484,
+      "progress_entropy": 3.2379860877990723,
+      "query_index": 145,
+      "history_indices": [
+        141,
+        142,
+        143,
+        144,
+        145
+      ],
+      "timestamp": 14.5,
+      "source_frame_index": 145,
+      "source_frame_timestamp": 14.5,
+      "history_native_indices": [
+        141,
+        142,
+        143,
+        144,
+        145
+      ]
+    },
+    {
+      "progress": 0.13397926092147827,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998623132705688,
+        6.401535210898146e-05,
+        7.368121441686526e-05
+      ],
+      "progress_variance": 0.015731658786535263,
+      "progress_entropy": 3.2372536659240723,
+      "query_index": 146,
+      "history_indices": [
+        142,
+        143,
+        144,
+        145,
+        146
+      ],
+      "timestamp": 14.6,
+      "source_frame_index": 146,
+      "source_frame_timestamp": 14.6,
+      "history_native_indices": [
+        142,
+        143,
+        144,
+        145,
+        146
+      ]
+    },
+    {
+      "progress": 0.13016188144683838,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999845027923584,
+        8.88749782461673e-05,
+        6.604626832995564e-05
+      ],
+      "progress_variance": 0.016616545617580414,
+      "progress_entropy": 3.243359088897705,
+      "query_index": 147,
+      "history_indices": [
+        143,
+        144,
+        145,
+        146,
+        147
+      ],
+      "timestamp": 14.7,
+      "source_frame_index": 147,
+      "source_frame_timestamp": 14.7,
+      "history_native_indices": [
+        143,
+        144,
+        145,
+        146,
+        147
+      ]
+    },
+    {
+      "progress": 0.13883048295974731,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998705387115479,
+        6.013735037413426e-05,
+        6.921766180312261e-05
+      ],
+      "progress_variance": 0.017084535211324692,
+      "progress_entropy": 3.291294813156128,
+      "query_index": 148,
+      "history_indices": [
+        144,
+        145,
+        146,
+        147,
+        148
+      ],
+      "timestamp": 14.8,
+      "source_frame_index": 148,
+      "source_frame_timestamp": 14.8,
+      "history_native_indices": [
+        144,
+        145,
+        146,
+        147,
+        148
+      ]
+    },
+    {
+      "progress": 0.12997731566429138,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998704195022583,
+        5.920499825151637e-05,
+        7.030768028926104e-05
+      ],
+      "progress_variance": 0.016922447830438614,
+      "progress_entropy": 3.252411365509033,
+      "query_index": 149,
+      "history_indices": [
+        145,
+        146,
+        147,
+        148,
+        149
+      ],
+      "timestamp": 14.9,
+      "source_frame_index": 149,
+      "source_frame_timestamp": 14.9,
+      "history_native_indices": [
+        145,
+        146,
+        147,
+        148,
+        149
+      ]
+    },
+    {
+      "progress": 0.13074207305908203,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997852444648743,
+        5.390216756495647e-05,
+        0.00016092215082608163
+      ],
+      "progress_variance": 0.016309238970279694,
+      "progress_entropy": 3.233527183532715,
+      "query_index": 150,
+      "history_indices": [
+        146,
+        147,
+        148,
+        149,
+        150
+      ],
+      "timestamp": 15.0,
+      "source_frame_index": 150,
+      "source_frame_timestamp": 15.0,
+      "history_native_indices": [
+        146,
+        147,
+        148,
+        149,
+        150
+      ]
+    },
+    {
+      "progress": 0.1486646980047226,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997847676277161,
+        5.9199926909059286e-05,
+        0.00015597102174069732
+      ],
+      "progress_variance": 0.015052761882543564,
+      "progress_entropy": 3.277860641479492,
+      "query_index": 151,
+      "history_indices": [
+        147,
+        148,
+        149,
+        150,
+        151
+      ],
+      "timestamp": 15.1,
+      "source_frame_index": 151,
+      "source_frame_timestamp": 15.1,
+      "history_native_indices": [
+        147,
+        148,
+        149,
+        150,
+        151
+      ]
+    },
+    {
+      "progress": 0.14118531346321106,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998096823692322,
+        6.108065281296149e-05,
+        0.00012930775119457394
+      ],
+      "progress_variance": 0.01642388477921486,
+      "progress_entropy": 3.288590908050537,
+      "query_index": 152,
+      "history_indices": [
+        148,
+        149,
+        150,
+        151,
+        152
+      ],
+      "timestamp": 15.2,
+      "source_frame_index": 152,
+      "source_frame_timestamp": 15.2,
+      "history_native_indices": [
+        148,
+        149,
+        150,
+        151,
+        152
+      ]
+    },
+    {
+      "progress": 0.13460779190063477,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998155236244202,
+        6.301993562374264e-05,
+        0.00012147409142926335
+      ],
+      "progress_variance": 0.017234480008482933,
+      "progress_entropy": 3.2815847396850586,
+      "query_index": 153,
+      "history_indices": [
+        149,
+        150,
+        151,
+        152,
+        153
+      ],
+      "timestamp": 15.3,
+      "source_frame_index": 153,
+      "source_frame_timestamp": 15.3,
+      "history_native_indices": [
+        149,
+        150,
+        151,
+        152,
+        153
+      ]
+    },
+    {
+      "progress": 0.13392066955566406,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998257756233215,
+        7.96654712758027e-05,
+        9.460509318159893e-05
+      ],
+      "progress_variance": 0.015583483502268791,
+      "progress_entropy": 3.2373239994049072,
+      "query_index": 154,
+      "history_indices": [
+        150,
+        151,
+        152,
+        153,
+        154
+      ],
+      "timestamp": 15.4,
+      "source_frame_index": 154,
+      "source_frame_timestamp": 15.4,
+      "history_native_indices": [
+        150,
+        151,
+        152,
+        153,
+        154
+      ]
+    },
+    {
+      "progress": 0.1309117078781128,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997702240943909,
+        8.09155244496651e-05,
+        0.00014882642426528037
+      ],
+      "progress_variance": 0.015290173701941967,
+      "progress_entropy": 3.218392848968506,
+      "query_index": 155,
+      "history_indices": [
+        151,
+        152,
+        153,
+        154,
+        155
+      ],
+      "timestamp": 15.5,
+      "source_frame_index": 155,
+      "source_frame_timestamp": 15.5,
+      "history_native_indices": [
+        151,
+        152,
+        153,
+        154,
+        155
+      ]
+    },
+    {
+      "progress": 0.12866730988025665,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998180270195007,
+        6.604448572034016e-05,
+        0.00011591168731683865
+      ],
+      "progress_variance": 0.01562727801501751,
+      "progress_entropy": 3.2255351543426514,
+      "query_index": 156,
+      "history_indices": [
+        152,
+        153,
+        154,
+        155,
+        156
+      ],
+      "timestamp": 15.6,
+      "source_frame_index": 156,
+      "source_frame_timestamp": 15.6,
+      "history_native_indices": [
+        152,
+        153,
+        154,
+        155,
+        156
+      ]
+    },
+    {
+      "progress": 0.1314409226179123,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998156428337097,
+        6.10810166108422e-05,
+        0.00012338704254943877
+      ],
+      "progress_variance": 0.01642736606299877,
+      "progress_entropy": 3.262573480606079,
+      "query_index": 157,
+      "history_indices": [
+        153,
+        154,
+        155,
+        156,
+        157
+      ],
+      "timestamp": 15.7,
+      "source_frame_index": 157,
+      "source_frame_timestamp": 15.7,
+      "history_native_indices": [
+        153,
+        154,
+        155,
+        156,
+        157
+      ]
+    },
+    {
+      "progress": 0.1294134557247162,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998297691345215,
+        7.253653893712908e-05,
+        9.760857210494578e-05
+      ],
+      "progress_variance": 0.017411459237337112,
+      "progress_entropy": 3.2849342823028564,
+      "query_index": 158,
+      "history_indices": [
+        154,
+        155,
+        156,
+        157,
+        158
+      ],
+      "timestamp": 15.8,
+      "source_frame_index": 158,
+      "source_frame_timestamp": 15.8,
+      "history_native_indices": [
+        154,
+        155,
+        156,
+        157,
+        158
+      ]
+    },
+    {
+      "progress": 0.12604022026062012,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998418092727661,
+        6.502211181214079e-05,
+        9.31398753891699e-05
+      ],
+      "progress_variance": 0.017219476401805878,
+      "progress_entropy": 3.261101245880127,
+      "query_index": 159,
+      "history_indices": [
+        155,
+        156,
+        157,
+        158,
+        159
+      ],
+      "timestamp": 15.9,
+      "source_frame_index": 159,
+      "source_frame_timestamp": 15.9,
+      "history_native_indices": [
+        155,
+        156,
+        157,
+        158,
+        159
+      ]
+    },
+    {
+      "progress": 0.13621389865875244,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998291730880737,
+        6.013486199663021e-05,
+        0.00011060493852710351
+      ],
+      "progress_variance": 0.016303151845932007,
+      "progress_entropy": 3.2848010063171387,
+      "query_index": 160,
+      "history_indices": [
+        156,
+        157,
+        158,
+        159,
+        160
+      ],
+      "timestamp": 16.0,
+      "source_frame_index": 160,
+      "source_frame_timestamp": 16.0,
+      "history_native_indices": [
+        156,
+        157,
+        158,
+        159,
+        160
+      ]
+    },
+    {
+      "progress": 0.14644180238246918,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.99982088804245,
+        4.985313717043027e-05,
+        0.00012930920638609678
+      ],
+      "progress_variance": 0.016445372253656387,
+      "progress_entropy": 3.3241021633148193,
+      "query_index": 161,
+      "history_indices": [
+        157,
+        158,
+        159,
+        160,
+        161
+      ],
+      "timestamp": 16.1,
+      "source_frame_index": 161,
+      "source_frame_timestamp": 16.1,
+      "history_native_indices": [
+        157,
+        158,
+        159,
+        160,
+        161
+      ]
+    },
+    {
+      "progress": 0.13749444484710693,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998461008071899,
+        5.9203557611908764e-05,
+        9.460702131036669e-05
+      ],
+      "progress_variance": 0.01759088598191738,
+      "progress_entropy": 3.321878433227539,
+      "query_index": 162,
+      "history_indices": [
+        158,
+        159,
+        160,
+        161,
+        162
+      ],
+      "timestamp": 16.2,
+      "source_frame_index": 162,
+      "source_frame_timestamp": 16.2,
+      "history_native_indices": [
+        158,
+        159,
+        160,
+        161,
+        162
+      ]
+    },
+    {
+      "progress": 0.13785837590694427,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998537302017212,
+        5.738249819842167e-05,
+        8.88757494976744e-05
+      ],
+      "progress_variance": 0.017088230699300766,
+      "progress_entropy": 3.303891181945801,
+      "query_index": 163,
+      "history_indices": [
+        159,
+        160,
+        161,
+        162,
+        163
+      ],
+      "timestamp": 16.3,
+      "source_frame_index": 163,
+      "source_frame_timestamp": 16.3,
+      "history_native_indices": [
+        159,
+        160,
+        161,
+        162,
+        163
+      ]
+    },
+    {
+      "progress": 0.13594186305999756,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998223185539246,
+        6.708481669193134e-05,
+        0.00011060417455155402
+      ],
+      "progress_variance": 0.01730673760175705,
+      "progress_entropy": 3.304457187652588,
+      "query_index": 164,
+      "history_indices": [
+        160,
+        161,
+        162,
+        163,
+        164
+      ],
+      "timestamp": 16.4,
+      "source_frame_index": 164,
+      "source_frame_timestamp": 16.4,
+      "history_native_indices": [
+        160,
+        161,
+        162,
+        163,
+        164
+      ]
+    },
+    {
+      "progress": 0.138541579246521,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998217225074768,
+        7.601702236570418e-05,
+        0.0001022920769173652
+      ],
+      "progress_variance": 0.017827987670898438,
+      "progress_entropy": 3.3219120502471924,
+      "query_index": 165,
+      "history_indices": [
+        161,
+        162,
+        163,
+        164,
+        165
+      ],
+      "timestamp": 16.5,
+      "source_frame_index": 165,
+      "source_frame_timestamp": 16.5,
+      "history_native_indices": [
+        161,
+        162,
+        163,
+        164,
+        165
+      ]
+    },
+    {
+      "progress": 0.1378140151500702,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997668862342834,
+        6.708109867759049e-05,
+        0.00016602734103798866
+      ],
+      "progress_variance": 0.01739688217639923,
+      "progress_entropy": 3.30515193939209,
+      "query_index": 166,
+      "history_indices": [
+        162,
+        163,
+        164,
+        165,
+        166
+      ],
+      "timestamp": 16.6,
+      "source_frame_index": 166,
+      "source_frame_timestamp": 16.6,
+      "history_native_indices": [
+        162,
+        163,
+        164,
+        165,
+        166
+      ]
+    },
+    {
+      "progress": 0.12934789061546326,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998015761375427,
+        6.708342698402703e-05,
+        0.00013134299661032856
+      ],
+      "progress_variance": 0.017195601016283035,
+      "progress_entropy": 3.2553348541259766,
+      "query_index": 167,
+      "history_indices": [
+        163,
+        164,
+        165,
+        166,
+        167
+      ],
+      "timestamp": 16.7,
+      "source_frame_index": 167,
+      "source_frame_timestamp": 16.7,
+      "history_native_indices": [
+        163,
+        164,
+        165,
+        166,
+        167
+      ]
+    },
+    {
+      "progress": 0.13046476244926453,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999751627445221,
+        6.604009831789881e-05,
+        0.0001823425554903224
+      ],
+      "progress_variance": 0.017254512757062912,
+      "progress_entropy": 3.2698044776916504,
+      "query_index": 168,
+      "history_indices": [
+        164,
+        165,
+        166,
+        167,
+        168
+      ],
+      "timestamp": 16.8,
+      "source_frame_index": 168,
+      "source_frame_timestamp": 16.8,
+      "history_native_indices": [
+        164,
+        165,
+        166,
+        167,
+        168
+      ]
+    },
+    {
+      "progress": 0.1225845068693161,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9996405839920044,
+        7.029152038739994e-05,
+        0.0002890829346142709
+      ],
+      "progress_variance": 0.017185229808092117,
+      "progress_entropy": 3.2153115272521973,
+      "query_index": 169,
+      "history_indices": [
+        165,
+        166,
+        167,
+        168,
+        169
+      ],
+      "timestamp": 16.9,
+      "source_frame_index": 169,
+      "source_frame_timestamp": 16.9,
+      "history_native_indices": [
+        165,
+        166,
+        167,
+        168,
+        169
+      ]
+    },
+    {
+      "progress": 0.12009111046791077,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997910857200623,
+        7.966270641190931e-05,
+        0.00012930535012856126
+      ],
+      "progress_variance": 0.01911233738064766,
+      "progress_entropy": 3.236530303955078,
+      "query_index": 170,
+      "history_indices": [
+        166,
+        167,
+        168,
+        169,
+        170
+      ],
+      "timestamp": 17.0,
+      "source_frame_index": 170,
+      "source_frame_timestamp": 17.0,
+      "history_native_indices": [
+        166,
+        167,
+        168,
+        169,
+        170
+      ]
+    },
+    {
+      "progress": 0.11528833955526352,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997740387916565,
+        7.483491936000064e-05,
+        0.00015117067960090935
+      ],
+      "progress_variance": 0.017625948414206505,
+      "progress_entropy": 3.174610137939453,
+      "query_index": 171,
+      "history_indices": [
+        167,
+        168,
+        169,
+        170,
+        171
+      ],
+      "timestamp": 17.1,
+      "source_frame_index": 171,
+      "source_frame_timestamp": 17.1,
+      "history_native_indices": [
+        167,
+        168,
+        169,
+        170,
+        171
+      ]
+    },
+    {
+      "progress": 0.12209305912256241,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997938275337219,
+        0.00010390004172222689,
+        0.00010228922474198043
+      ],
+      "progress_variance": 0.019032657146453857,
+      "progress_entropy": 3.246910810470581,
+      "query_index": 172,
+      "history_indices": [
+        168,
+        169,
+        170,
+        171,
+        172
+      ],
+      "timestamp": 17.2,
+      "source_frame_index": 172,
+      "source_frame_timestamp": 17.2,
+      "history_native_indices": [
+        168,
+        169,
+        170,
+        171,
+        172
+      ]
+    },
+    {
+      "progress": 0.1440804898738861,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997662901878357,
+        0.00014882584218867123,
+        8.479841199005023e-05
+      ],
+      "progress_variance": 0.018248695880174637,
+      "progress_entropy": 3.3323416709899902,
+      "query_index": 173,
+      "history_indices": [
+        169,
+        170,
+        171,
+        172,
+        173
+      ],
+      "timestamp": 17.3,
+      "source_frame_index": 173,
+      "source_frame_timestamp": 17.3,
+      "history_native_indices": [
+        169,
+        170,
+        171,
+        172,
+        173
+      ]
+    },
+    {
+      "progress": 0.15132857859134674,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997822642326355,
+        0.00013550964649766684,
+        8.219075243687257e-05
+      ],
+      "progress_variance": 0.01828048750758171,
+      "progress_entropy": 3.3503503799438477,
+      "query_index": 174,
+      "history_indices": [
+        170,
+        171,
+        172,
+        173,
+        174
+      ],
+      "timestamp": 17.4,
+      "source_frame_index": 174,
+      "source_frame_timestamp": 17.4,
+      "history_native_indices": [
+        170,
+        171,
+        172,
+        173,
+        174
+      ]
+    },
+    {
+      "progress": 0.1470234990119934,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.999825656414032,
+        0.0001007065802696161,
+        7.367850776063278e-05
+      ],
+      "progress_variance": 0.018254797905683517,
+      "progress_entropy": 3.351034164428711,
+      "query_index": 175,
+      "history_indices": [
+        171,
+        172,
+        173,
+        174,
+        175
+      ],
+      "timestamp": 17.5,
+      "source_frame_index": 175,
+      "source_frame_timestamp": 17.5,
+      "history_native_indices": [
+        171,
+        172,
+        173,
+        174,
+        175
+      ]
+    },
+    {
+      "progress": 0.16325099766254425,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997989535331726,
+        0.00012147208326496184,
+        7.966333214426413e-05
+      ],
+      "progress_variance": 0.0172103438526392,
+      "progress_entropy": 3.3743579387664795,
+      "query_index": 176,
+      "history_indices": [
+        172,
+        173,
+        174,
+        175,
+        176
+      ],
+      "timestamp": 17.6,
+      "source_frame_index": 176,
+      "source_frame_timestamp": 17.6,
+      "history_native_indices": [
+        172,
+        173,
+        174,
+        175,
+        176
+      ]
+    },
+    {
+      "progress": 0.16222995519638062,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998847246170044,
+        6.302429392235354e-05,
+        5.224897540756501e-05
+      ],
+      "progress_variance": 0.018198132514953613,
+      "progress_entropy": 3.388503074645996,
+      "query_index": 177,
+      "history_indices": [
+        173,
+        174,
+        175,
+        176,
+        177
+      ],
+      "timestamp": 17.7,
+      "source_frame_index": 177,
+      "source_frame_timestamp": 17.7,
+      "history_native_indices": [
+        173,
+        174,
+        175,
+        176,
+        177
+      ]
+    },
+    {
+      "progress": 0.15675263106822968,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998620748519897,
+        8.219731535064057e-05,
+        5.5617485486436635e-05
+      ],
+      "progress_variance": 0.01791219227015972,
+      "progress_entropy": 3.3797852993011475,
+      "query_index": 178,
+      "history_indices": [
+        174,
+        175,
+        176,
+        177,
+        178
+      ],
+      "timestamp": 17.8,
+      "source_frame_index": 178,
+      "source_frame_timestamp": 17.8,
+      "history_native_indices": [
+        174,
+        175,
+        176,
+        177,
+        178
+      ]
+    },
+    {
+      "progress": 0.15159741044044495,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998445510864258,
+        0.00010070848657051101,
+        5.475425496115349e-05
+      ],
+      "progress_variance": 0.019482888281345367,
+      "progress_entropy": 3.4010355472564697,
+      "query_index": 179,
+      "history_indices": [
+        175,
+        176,
+        177,
+        178,
+        179
+      ],
+      "timestamp": 17.9,
+      "source_frame_index": 179,
+      "source_frame_timestamp": 17.9,
+      "history_native_indices": [
+        175,
+        176,
+        177,
+        178,
+        179
+      ]
+    },
+    {
+      "progress": 0.14419147372245789,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.99988853931427,
+        7.141615787986666e-05,
+        4.006082963314839e-05
+      ],
+      "progress_variance": 0.018011154606938362,
+      "progress_entropy": 3.330465793609619,
+      "query_index": 180,
+      "history_indices": [
+        176,
+        177,
+        178,
+        179,
+        180
+      ],
+      "timestamp": 18.0,
+      "source_frame_index": 180,
+      "source_frame_timestamp": 18.0,
+      "history_native_indices": [
+        176,
+        177,
+        178,
+        179,
+        180
+      ]
+    },
+    {
+      "progress": 0.15749026834964752,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998437166213989,
+        9.609663538867608e-05,
+        6.0135738749522716e-05
+      ],
+      "progress_variance": 0.021625926718115807,
+      "progress_entropy": 3.4194467067718506,
+      "query_index": 181,
+      "history_indices": [
+        177,
+        178,
+        179,
+        180,
+        181
+      ],
+      "timestamp": 18.1,
+      "source_frame_index": 181,
+      "source_frame_timestamp": 18.1,
+      "history_native_indices": [
+        177,
+        178,
+        179,
+        180,
+        181
+      ]
+    },
+    {
+      "progress": 0.14974504709243774,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998718500137329,
+        8.349254494532943e-05,
+        4.4690343202091753e-05
+      ],
+      "progress_variance": 0.01865297183394432,
+      "progress_entropy": 3.337653875350952,
+      "query_index": 182,
+      "history_indices": [
+        178,
+        179,
+        180,
+        181,
+        182
+      ],
+      "timestamp": 18.2,
+      "source_frame_index": 182,
+      "source_frame_timestamp": 18.2,
+      "history_native_indices": [
+        178,
+        179,
+        180,
+        181,
+        182
+      ]
+    },
+    {
+      "progress": 0.15123344957828522,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.99983811378479,
+        0.00010720294812927023,
+        5.475390571518801e-05
+      ],
+      "progress_variance": 0.022614724934101105,
+      "progress_entropy": 3.429316997528076,
+      "query_index": 183,
+      "history_indices": [
+        179,
+        180,
+        181,
+        182,
+        183
+      ],
+      "timestamp": 18.3,
+      "source_frame_index": 183,
+      "source_frame_timestamp": 18.3,
+      "history_native_indices": [
+        179,
+        180,
+        181,
+        182,
+        183
+      ]
+    },
+    {
+      "progress": 0.15325257182121277,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998756647109985,
+        7.966945122461766e-05,
+        4.469051418709569e-05
+      ],
+      "progress_variance": 0.02487533912062645,
+      "progress_entropy": 3.472598075866699,
+      "query_index": 184,
+      "history_indices": [
+        180,
+        181,
+        182,
+        183,
+        184
+      ],
+      "timestamp": 18.4,
+      "source_frame_index": 184,
+      "source_frame_timestamp": 18.4,
+      "history_native_indices": [
+        180,
+        181,
+        182,
+        183,
+        184
+      ]
+    },
+    {
+      "progress": 0.1607261598110199,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998555183410645,
+        7.843271305318922e-05,
+        6.604695954592898e-05
+      ],
+      "progress_variance": 0.030157528817653656,
+      "progress_entropy": 3.5517749786376953,
+      "query_index": 185,
+      "history_indices": [
+        181,
+        182,
+        183,
+        184,
+        185
+      ],
+      "timestamp": 18.5,
+      "source_frame_index": 185,
+      "source_frame_timestamp": 18.5,
+      "history_native_indices": [
+        181,
+        182,
+        183,
+        184,
+        185
+      ]
+    },
+    {
+      "progress": 0.1336018294095993,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998453855514526,
+        7.367996295215562e-05,
+        8.092160715023056e-05
+      ],
+      "progress_variance": 0.02629687450826168,
+      "progress_entropy": 3.394340991973877,
+      "query_index": 186,
+      "history_indices": [
+        182,
+        183,
+        184,
+        185,
+        186
+      ],
+      "timestamp": 18.6,
+      "source_frame_index": 186,
+      "source_frame_timestamp": 18.6,
+      "history_native_indices": [
+        182,
+        183,
+        184,
+        185,
+        186
+      ]
+    },
+    {
+      "progress": 0.14945681393146515,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9997817873954773,
+        0.00011590748908929527,
+        0.00010228798782918602
+      ],
+      "progress_variance": 0.03334401920437813,
+      "progress_entropy": 3.520103931427002,
+      "query_index": 187,
+      "history_indices": [
+        183,
+        184,
+        185,
+        186,
+        187
+      ],
+      "timestamp": 18.7,
+      "source_frame_index": 187,
+      "source_frame_timestamp": 18.7,
+      "history_native_indices": [
+        183,
+        184,
+        185,
+        186,
+        187
+      ]
+    },
+    {
+      "progress": 0.14990241825580597,
+      "trend": "growth",
+      "trend_probabilities": [
+        0.9998511075973511,
+        8.480560791213065e-05,
+        6.401463178917766e-05
+      ],
+      "progress_variance": 0.029672719538211823,
+      "progress_entropy": 3.50060772895813,
+      "query_index": 188,
+      "history_indices": [
+        184,
+        185,
+        186,
+        187,
+        188
+      ],
+      "timestamp": 18.8,
+      "source_frame_index": 188,
+      "source_frame_timestamp": 18.8,
+      "history_native_indices": [
+        184,
+        185,
+        186,
+        187,
+        188
+      ]
+    }
+  ],
+  "performance": {
+    "queries": 189,
+    "inference_seconds": 16.52618483128026,
+    "seconds_per_query": 0.08744013138243524,
+    "queries_per_second": 11.436396357026489,
+    "decode_seconds": 0.14391549210995436,
+    "baseline_allocated_bytes": 9226702848,
+    "peak_allocated_bytes": 9323182592,
+    "peak_reserved_bytes": 9460252672,
+    "timing_scope": "GPU synchronized SDK prepare+forward+output loop, warm-up/decode/render/load excluded"
+  },
+  "video_sha256": "82bf8bdc61aa861ef6b623aacbcf8a78ff2bf43e1a90ad6f8cda3b042a249fda",
+  "goal_image_sha256": "fff24da1da9cc7ae130788b2c81ee0325bedc61ee307ebb356d2461e7846d64a",
+  "decoded_identity": {
+    "observation_rgb_sha256": [
+      "e758692486bc711fc77ec78c4b304bd475077e6d8df310d5d4fb794aee2136fd",
+      "9784780bf961341aa7adfd96a3993373926d5bd1233729cbb28bb01f9ced579c",
+      "f49b6dbb1796a83a8a4a694efb62df9d2c9be925757454561c7b14fe845172fb",
+      "5f2677ecf2055b88068ff04904bbced869f3b1673a95c6c96994dd5d23065377",
+      "50589ca569a2ea75840d40bb175b1cc00cba59ee916c41055584d52732ea8570",
+      "ad41dcfb69aa71baa4e90d92dd1731119afe4d1cb8919a78fce14d308f26c8f5",
+      "f6c051c9cff9702e8f57d83f62bf4375f7c7e3ce0ccf2c8f1538310c0f67bc55",
+      "bde37aae6710caf9ee1fa3eb0b34f97bf22e26f0a8088af58c5972df9fdb18c8",
+      "3019a3c038f2d6ea3fc4ef52e55b3fe032aa655860115e13f6c897a1c4b8c321",
+      "4ea58072672f28b2b230851550f0e99724de5562da506f430b1adfeb71fd1b2b",
+      "8317c9ef8cee61aa7b004883544b0111a91906a27a4954497b3b8a32d10965f0",
+      "a528c80ddf32935566477d8a8638255b78eaa174b8893a2296cd2de8a33e9d68",
+      "1b34bf2ecdce5bda3e3a2a267fb83e17ad73db7332d338a5c21d45115ba3c898",
+      "b171889d2abb9fd0ac1c9349b567b9a520804b99885d45d5748ec8e02f4c0171",
+      "9c0bd1d468348f733395c0549ff6b36c25a350e787424a5e65923b42a13f8f96",
+      "d44662e1c158ba435e25d08681981438db3de0ac65746a58416dbbf2f0d62477",
+      "e13bf39284f6659a2fe8a0fcdd6a69a08f423e65c8110087f6382f50f2a985a7",
+      "687e1e072a854578cd9891c9c19e1e46510a2e529c62b0c22b0f593ba5e9b4b1",
+      "f50909e7f92df07581a5c7c5f82940d6326307739a7ed3b1df9fc56318db7b35",
+      "4da187b22ff1f530aae97a5c5c2afb9396d4a5a3fe757b04cfd74d827b0f7c98",
+      "8ffd5b5b74e3ee126cd5ad24cdb6cc0b49e1e56ac1defb886904145c7b514dff",
+      "cd4fee2db0c99428d87e4afa612c633131b3c1f069be3c5534647114bf75a562",
+      "02c4e38f77476e04ac415968d87a5ad336bff464fce14eb157a4d85439395ef2",
+      "c207fa1f31f16aeeecb02e5cffb25fe6346d79a667a9f0efbd447ed0b89428cb",
+      "114823f36c6fe42f77d53a64a987f8d51b5f82c47b32b3551157adf863964099",
+      "9c9cd849bd6a94ea909fcf820b6563dabca674c4672541998521d1e74d1529c8",
+      "19ac5256228dbca19a507e517da205c6434b21c6515e382ffbe849a972187811",
+      "6068813e495094d21cf93636bf90ff1ea6b78795e88dde0508e0aff58d9773db",
+      "0d79df48cafcc5306e4b0cdb89894e8d42b90a207c03c10cb020828e23655611",
+      "4a853ae6771f9811ad7de4ddb24d1c7996e8285652212f020a44061b6688383f",
+      "5a8a42259f2041cf6724ce1ebbb4ead7dc9838d6b6663ce72a6e2548c71998e9",
+      "6f413970af7e8d7c230ac3e76ef66bdc9e535be7f36249d0579117dd78dbbab1",
+      "cc79aa18b2c7723efe055de99bb2ea98e71d7107c9ed424e91f331efc51d23cf",
+      "947c119e111d25f0c900678ed5ea8831c86d17fc590ad731b27e36e78ef36c50",
+      "fac7a36f86799e419c51d072dbf6d3fae019f10a0c6bf1e5642b33755d2bd953",
+      "dda0490fa8da5f98458083cd516bf99b5eaa7e61772d6acceb088dd54d184200",
+      "3832f7c5931699fd47524164256243c152d767086faa6f99abeb8e5435ae2d6f",
+      "bd4eb6e38be24c21829a3a23eb122ba0b2015134099cf2aae5edaee5dd835eca",
+      "614eb779d24b2b0b505c0036b8f2aa77523ecfbde3d2588b5febd8038de895a9",
+      "0fec6e16893ea21ac5b5c63fcbf7cea58889bd194a96561b88581fb71725317a",
+      "a5a027a8e93e9ce07e461ea0da7452d11038845900967aee87bc76071c740a4b",
+      "cb94ac95be37a21f5d3e73550b650db6bf20e15b61447b99aae6b23f8a9c4600",
+      "8326c81b4f087e4d706571a1a33b3d40575c996ace301ebb9ed2df97461f5497",
+      "4127dfd82d759e09efd14dec634b52ed88e34c296f817a7e212cac76c42d9576",
+      "a14441683b85ca9f5c7d5b984a39644d34572206ed17762cb35081841c264a1d",
+      "d64384f625850bacc41a34cf31dc5d2fba897fabc05eac0cbde6b0207afef929",
+      "7dcbc69cf28c874cb74f61732c01b45a9b745bb5343d0a907256f83ced6f8329",
+      "c2f3313fb16e9419d304627f0bd68243648d4794493baeb8f0ef0df7d3a93d3f",
+      "176c1996a81d19044c0922c885bf067fa3bba32ffca944e23e2216413c851153",
+      "3203fda77584724dde306bc1c020be279fa17ea2c7ac5d046789090527aadee0",
+      "5d0b2e2e0f4789d32c70052590f1cf043552c4f231e604c74256a43f28c13d93",
+      "82f419696f85cee2039af0f60bc986bc992c8c3c996d41c080411bcc3fad999a",
+      "8340fa9346a3d822c31fa7c727402977b4a3bc9d6f448912939ca6a0696184f8",
+      "82a29d43c5e679dd2d2a90b2fbc83980f4ed6d755bf6edd7c6131fc1a0e4e95e",
+      "4800fd007d77b51320b588230695102633515a1ba544cadda05ae8c9bacb1a2c",
+      "67d765504dec5860f279bac782111d1212dedcb3b2702f3805159650fca63fb2",
+      "91dc4df59b7b193f07b30a58fec0a6a2a7febecf9166e89ed0897f13cd0aefb8",
+      "9ed93661af76a0179e869f0c260615b02d362e941981b72fe07bb04dca1b787b",
+      "2d46ef089afebbbcf94fefcd5c0c33891fb56c34abc5c5d36adcf69500a12d7c",
+      "6fbc311e4ad169b084029e883fa44439e7ed0285bb419b8d84f4416fca716c77",
+      "67750ea968a44c535fa3b68f404c2d7f7f246b83f7347868a60b117f99f91746",
+      "437c83f7117c2a6cbfd70dfb8e64f57f9dbbc02b99a6c9b5dd1266789e001b96",
+      "66b25f84a5843428879d66cf90e9d7910b064d0aee31f63c37e073800bb4af86",
+      "56e177a048ebb08934f26ee222724f48429546b4fc647cc54f19786517d6c8d4",
+      "3ba5a441ab067494005ac8f0017d83abd6c5349e2f9c09b8a7ecf9690968189d",
+      "d9991735d231714f00a3bed302811fd6ccf59464233eafe6029b416b6413d4f3",
+      "17a786a0aeaf13f997c71e8c4fd19922f8643d1064ee257303cd96455e638f0d",
+      "177620c77e9b9d41584cdf13b69878bb0a79012c99fcd5649057437fd7893d87",
+      "b1439a59c95dea37cb3baca8c0c7ae50b5f5eef758111ea28b63827fc6da37e8",
+      "d4570f82cf5ea18e0ce44df25fcf40f40d11db5f8dd8f1f93573f30fa4f2c8d8",
+      "25942a8fcdd1967c7157cecf46dfec4dd3ac0dac6ce16883dc471ec782f71919",
+      "eaf3918e8734e6f1fb50baaf22b75ca9d1c563e7655a917051891a9e998cd3de",
+      "9b64ee2d7b94bfe7a3f059106e3ee5212d4e1bb835e871110dc82359db541062",
+      "2dc4b9c165f41c2e8153d9ad149037297860c4083e1508a3d237a4211e520d08",
+      "f529992381fbdc082e15802a944db11276f9206b5f40d17153d0b6a4431f0561",
+      "4f95149fd6d941bdf03ab224856b63504b6bf52ad434ba4ac26dce68f4cce675",
+      "8cee539918171a2d024f50ebcd3bfbab29d6ad5344070743d8f0bf6c337efdbb",
+      "b86cc56af72a7e33b42477961ffa4df85c77107608d1cabbf6dc6a78a7e6142e",
+      "8580a0d7c6e6e3527c1905d5f364df416be429c68d8b361a619246762121e584",
+      "6ac9542c1c49dd11d7ed59d4d1515fb710b1ce726bb2e661d075d857aa2b6443",
+      "a3be54a34fd5684e2fbb5b7f8ec4814f9ecd1275c560d062a63fe64653d3fa1e",
+      "c2c16244ac532a0f279751f74f5d089b0df4cff6e5ddaa1f75b4c40ba60b522a",
+      "7f2274472b52461ee9ecea8a98867f3e995593d001bf92150b9543970426e254",
+      "1a4fb47b86501d35a5464ac3d339fcc503045140341dae59b3a33c9e8a836b0e",
+      "c4fdfe4a3ed38ff9e52d064773c1c1dc4160bb651a5b53ed44a657e7c87dd0fd",
+      "9c63758dec3edc0cbf4394d6c0367f4eabe234567234bf6fade9ddbfc289aecf",
+      "0967e9076f6a40639965603a0b21241d5be575533c86e76e347558ddfcada7f5",
+      "017074704b8aa24abb687ac29268a6a39a5e5507a1a29a5473f77af54bcd653d",
+      "028b03dfcd91ab87ed15b59cdfc446b7e9126f598f8f7a3a52e6fe4e76ada5d8",
+      "73b7f809a07499e498a270bc0225fc065bae82b1de035e909ad4e1b30b8074c6",
+      "300462751f707803bf75ad289a7ed49f5726e36a6c1a9cdccd648f2ad0c36ef3",
+      "5029ddf2f980fd95a87c66914ab21fec6b3a5033879312a5cfa3dc452ba9676c",
+      "d8c225b90ddd85d05a54904e5c0f110d49b81e1d92f473f192e770135b5de339",
+      "2bc3d9908e2fd19dd5efd9bc90e0543a70059aee0636816e0a1f2bc9ce4b0033",
+      "52237860932f733115f18b543f270eac35e6a40e652531f1b1d0d62e0042134e",
+      "79a5c53b11d60aaf078390f08b0555bb2936a79ad5853b8686881e85a29c8ab7",
+      "f90aad7865dda667943729bb20af3bc4bf5b64c1e836669a4610c0a24a6a0949",
+      "57e7c7979c3af120f7aac2346a526ed131ff7cfda7d7dcebe2363cf2401e859e",
+      "95f0ba72e6dbd3fdb3821b42805d75abffeded1517b8bdea88b4c2382aade4bd",
+      "a13e043270221e7cfbbba1dce07dbb9f0a50a5833ec1246b703da376ae8668e0",
+      "e3af0e7684acfebb866c7ad838307e363c0d96ec0c4418f16b14be6bc03a3479",
+      "b0d2e15d836a8e7a71b168750c535cf9ca4a87eb1e15f366c3f5f53f65eb5ea6",
+      "ef10e6e598848913830ceed41025560d6b9bf5fd7af92e8163f6a5f21dbe623b",
+      "c587be9775bc73b3ba67f65a3529687f3811de9edd3fc28c640bd3a2faef3c37",
+      "5d059d9979546501f45752740aeceb602aeb61985a5c3e019950ce80a5c4254d",
+      "9ae0904e9759705f9e461ab380ede158015770c9fb9618a78b4962bf2a91da56",
+      "a0560d631ac4d81f75f94046029e0a998fa65e7cfb80f88f28fd17637e8c1522",
+      "081e9697b8a3438d2e800c02b87458555e25ceaea17606c8b79575cfa7d9467f",
+      "db9d8607d40a65aed67dce816e1fe211f2be7c5ea2e877b0015a145f5e299f12",
+      "670a31c81ff02a73b93b9ef01f9faebce0aeaef350ff165e3219c2d04a50d0e4",
+      "96db78c38e5d8665173372f8bbc79b7e5080b9de4f43bfbac9f9b6d55ce2bafd",
+      "9dbf62557f4cbb44ca90421b34b538dca424cfcb3095acd3bc4da1dc52abff2a",
+      "994eff81463642cd59f689f2b664f252a1167c23d4b5d36351b0f33a465ebe08",
+      "52e4a180e55bacd70fd37d2cfd0740615220bf183574933acf038d813615e213",
+      "fa19e07d46c05251ce4fd00bb544589559ee84220236957b73924f9c18914d8e",
+      "269da0ff9338bd9c218331bdb8baa27fd102cfe3c475bd9c723d37b3d9985767",
+      "f88300b6e5d39b7456adc3b4f597f782ecbdee14256af9863fab446c07142345",
+      "77bf9f0eebf0003244c7614f60841db0c3568c880a801520d564f35fa32e4f73",
+      "1e188a0dc3933f8bf84d551e162e372617a78f7a920c388b26358d8b7dc1907a",
+      "0daf732f8a9b9fbe5af26cd5ccd940f8192501618acaeb2af84be9a373ad8297",
+      "b3c39b54c40738fd1736a01f2f41709bacd70a38bece82ef667de17bb4812b4f",
+      "815cf6ee5619ba7bfe7bba2ffa0dfeb9357b201d88366b9639d6052f7cbde5bc",
+      "a4a9b9fd5213674e17e65eefb5236a2c9f79f483de66c0f6a20e76b8a7894715",
+      "4e106c9258795ec4a45239c290a60768f09d942ff6e1e84f06c6fc9644326799",
+      "a05ee779b6cf9e1260ea9fa713e456bc6af0999620c2003a358560ae4d074f17",
+      "ed4c821ee6e044cc3332befc927fed7efcf00841d72feb14851410cad1df7423",
+      "048dc504bfb41eeb1a1a77e2d5fa8886b031d247e1d2446f42a1686d1c2745f3",
+      "877af36d5ea4d75d36caf8f3ad0fa6d5dbe356931de7c4867ae0111f2d23afb1",
+      "683c106dc861046a0dcba5a7f1fb210cf49f70546a4f016a24e6f7fc39165405",
+      "16ad174b496a7ed06ceb627892649153924500c244958f6a0e489f922b2bbd7e",
+      "3b074f9ae7624476241268c0116aae2daa9022910b0f8d70d3a84f20145d99ee",
+      "0f105a3560601471f4b43a6feb39deb1b8785110181fca3d98a6e7f44da714a2",
+      "61832edc27b3107d66bdf6e63a67761a3c3a73328132a11124388096eb381082",
+      "580586409c07d34d4ff6b5ad7c2c374ad22371c6c51585e145a873bc893ccfe7",
+      "74ecf5a87cde7db39ca1c96623a172d8ccd3ab1b9bd71069e400ce0957b8f4fd",
+      "9512a1b0a801990148cf925ef4b26fce97946b0846ec5ab30fdfd9d6947f5763",
+      "d8ac40c78a9789e3bec087f211fe26f9d7ea434d10663a9c4a54403bb6ee8c32",
+      "7109ee97f72546f0ba6a0e1be5327d2a315ef551e81f9d1266d489f7c1aeeeac",
+      "b727ad632fb02d3e681ac4c1db1c3c202678dcc1768f3e2f335151ddb8d221e3",
+      "09b695dde92901d56827845cfb6cc2ad1856600f9c2b027df3b5832a29ef6e32",
+      "96811d62ae9e6b559300c1d2cbe0c7eeeeaa9318d0b1ea7d7e791e28bc837f73",
+      "2ac689776ce41765b9b15441e49527b16b0345febee9ce2c3772b5ce7bdb98f5",
+      "01d7cb112ae5dec83609e957c1dc51f31cdad7187e00530207a2951aa26790bc",
+      "5f10ba68f2a66e1c4582dfa6be51a1e71319b91fdb1536605fa6f7b2fec2bfa3",
+      "b2c3b9fe251a21d2b5f10e3e642087d6b2ee038a14182ce1c48fbb82255667fd",
+      "93d1cc76d792fde29e7e80e137db43330351fd07e5ef6493b5c9e1f2f6b90de6",
+      "0c40681cadead0a0bb23a89dee33220595d1fb64cdbed4a3477f0ed52c14e173",
+      "f36eb4d2debd62475ef17833a939c20f7882967cecec4f016b5e4ed5540318e1",
+      "c5593d4c2f4c56016a17cfad64368c537ac4cbec17685f467b3e4d9316e179b9",
+      "4a2ab777d6101ce0316c0b6436b15b0b41dccf0ebc0756f4c4e245a7c41be361",
+      "e66663cd4dd097464f22d6384effb8618cbce9df6d20339cf50d47b0e79df33b",
+      "bdc2069584fe2bb7bca518fb256620b56814547ddbb27a76c246d61e6c806c3b",
+      "ecead7285d8673df9a327244b520dae9decef0032ed6028ea885e175c22dd4fd",
+      "5d3cbc7dbf10fad9840b2d747fdd25c4569ddda2c809d873d7f622fe36a4c68d",
+      "74cbfb50f5b02313daffb7ededa968df44e7d2a78b25db763bc743a5d2e70c26",
+      "47881c6999c3d40daaa651411d42a7a34f7f6e4ed77afd941147bed06feca05f",
+      "3bf77e573518f6963491c1b30651a2be1244f56a10b19ec819b7dfe116aa4716",
+      "d1cf93bd07c93b14f2e6174737caa3e37122bcaabd516baa99184c9a69d3b2c7",
+      "7317c087b414d80a6ec29b9bdf0d67d2f13a711e7458ed9cb5fc2d8e93296410",
+      "bbcc990d8a9b5f8efe6d68ae7f641054eff54fcdc875a01b2f92b1b97dd53e6b",
+      "d0be28579607ddcb453e730819935619a231665e2e0131081b4454dda0af7838",
+      "0a99cbb198e1b68d69011c910ca54e0bc3d7a3bf04727b7155fea889f04a5fc1",
+      "523017e3ebaaff733ef0a478dbbc2fd77f214825835d97e88e604577cf5c5e26",
+      "4c6597d40e4c7bd91f818ae0b2bada07175e66b1b2848b9cd254cff2fb0ab02e",
+      "f0cba2f94287cbfdc9e4a71e5a288097ba55b78d649092c772f242c7df40bc67",
+      "4842b0822b88082701a4ad266e8f50b07b618f7d33f086320d94bfb6e2fe40e7",
+      "2e4497b803e62f8a163c143cf28fe579229c83ba40d0e905caa90b40aa263f9d",
+      "b971de38f26d1e67c258767e50168a117b0898bebcf52a1dcff9cfe4bf89cd2f",
+      "f86c19345b76636cbec389cfa3a722bc316717a27fe866b938ddff98d111f3e2",
+      "eb364e502c587b4afc1c1058f7e349d22e05be25bf15cd889e44d57de90eff77",
+      "5cabcc2c85e2b1af6fa53a982a28ff6588c617a0a19eac2f26d3cf4c5e3fdf96",
+      "4219491a473a4ce16f08dab3c01952a54cc8abc795ecb861b06a8b4c1ad07f28",
+      "a4f2961a25c55b6926193696e893740044f022b05481524a1c4fd9b48c6ecc5f",
+      "8cc4ef41b7eff0b572880a302892f81f4d11bfe808d26372b47141dc0af28b5f",
+      "3b611dbb2c71b7bf354db2d3bcf315d3f57b39a97edd6d216ea9a6457cb11bb7",
+      "9bdf86515673b3a77f8ba097341d2af718e37aedd68c012d0d44562a86dbb7f6",
+      "cac9f68ff8e050e87f28214f0c5d14c6ca2556c844ac5e74a674305fb8d8fe09",
+      "449cb81c583929cc9ef8442755dce803d08b3a2560f828cfdf4d3209db12cfbc",
+      "81639d0167481a396cce1cdc6524275c405bf2cdeac89e7f876b3eee1671d5c1",
+      "078870674d9537bf228d96a00731e869a0ae45fb32fd1a7a77726660857e51bb",
+      "426a8cd176166720804c0af54e8651fa0239edb55fcb1c01b5b6a0af92d1a461",
+      "28521162a77a4f984742aae155903d1e5115cca45cdcc40057d4f21127fe32b7",
+      "4076037d84c52d0c128f5588b16fa7a447a2998d0dc1febb48220c7a22864307",
+      "f592c628138e2bff9294f97d7eed5b31e5bd05d72eaacea7e82e8f6e57ad95fb",
+      "9e75be404098daaa1c207b67e74b20dc3ca314f4c9b2f0a4fc54cccc2052bace",
+      "e0c29ba1c6424497e0d1925dd18ee40fc80c691e7ce14237b4e04f22bc6186ef",
+      "6a8fc9540deb8d02c77c92cedaa46795b4813ed8916c523fd92f14caf60e873d",
+      "944d29f08c290f1231c0a60904ff3387620c761fc3f36ed782f6378449e17db5",
+      "26e2c2e3e9bada35eb237d00da7d3160bc908806c1e9ca91a5412a25dad7f43c"
+    ],
+    "goal_rgb_sha256": "9d6ce9524ec9f14e5f26f54a313a034ed4c636f3aa35d5d29087fd25d0283f1d"
+  }
+}

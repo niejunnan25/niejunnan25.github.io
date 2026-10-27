@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow"><title>LIBERO demo: inputs, sampling and interpretation · Event2Reward</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../assets/mark.svg"></head><body><header class="site-header"><div class="nav-inner"><a class="brand" href="../index.html"><img src="../assets/mark.svg" width="26" height="26" alt="">Event2Reward</a><nav><a href="../index.html#release">Resources</a><a href="../index.html#demo">Demo</a></nav></div></header><main class="docs-body"><p class="doc-note">Event2Reward 0.2.0 · Project documentation</p><h1 id="libero-demo-inputs-sampling-and-interpretation">LIBERO demo: inputs, sampling and interpretation</h1>
+<p>These four selected LIBERO-Spatial test episodes use the suite-adapted step500
+model. Videos and raw predictions are unchanged from the recorded run.
+No new model inference was performed to build this website.</p>
+<p>The model receives task language, the episode start, an independent successful
+goal reference and five external-camera observations. Goals come from separate
+successful episodes with matching task instructions. The wrist view is a viewing
+aid only and is never used as model input.</p>
+<p>The source videos and query clock are 10 Hz. For query q, history is
+<code>[max(0,q-4), ..., q]</code>, spanning 0.4 seconds with initial-frame left padding.
+The displayed score is the last recorded prediction at or before the video time.
+Curves preserve all 712 predictions, including declines and errors. No smoothing,
+success threshold, monotonic constraint or score interpolation is applied.</p>
+<p>The successful demonstration ends near 0.974. The successful hesitation case is
+underestimated at 0.604. The failed episode ends at 0.242 with an intermediate
+false rise. The recovery example is an explicit model error, ending at 0.150.
+Progress is not a calibrated success probability. The auxiliary trend head is
+retained in raw files and is not used as a showcased capability or shaping reward.</p>
+<p>All four episode IDs were checked against the 15 recorded Spatial training
+indices. This does not prove global content deduplication or unseen-task accuracy.
+These are qualitative examples, not the full test set or a new benchmark.</p>
+<h2 id="media-status">Media status</h2>
+<p>The expert demonstration and independent goal images come from LIBERO datasets under CC BY 4.0. The three policy rollouts were recorded in the LIBERO simulator. Source episodes and unmodified predictions are included with each case; see the <a href="../assets/demos/NOTICE">media attribution notice</a> and accompanying licenses.</p></main></body></html>

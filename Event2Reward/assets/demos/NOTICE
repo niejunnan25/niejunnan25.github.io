@@ -1,0 +1,22 @@
+Event2Reward LIBERO demonstrations
+
+Original project annotations and companion website code use Apache-2.0.
+The demonstrations use the Event2Reward LIBERO-Spatial reward model; the
+separate model repository includes the model license and upstream attribution.
+
+LIBERO: Lifelong Robot Learning
+https://github.com/Lifelong-Robot-Learning/LIBERO
+Copyright (c) 2023 Lifelong Robot Learning.
+LIBERO code is MIT-licensed; the license is included in licenses/LIBERO-LICENSE.
+The LIBERO datasets are released under CC BY 4.0
+(https://creativecommons.org/licenses/by/4.0/).
+
+The selected test episodes include one official expert demonstration and three
+pi0 policy rollouts. Task-matched goal references come from separate successful
+expert episodes. Only external-camera frames enter the model; wrist videos are
+viewing aids. Videos, reference images, and recorded predictions are unchanged.
+Source episode information accompanies the predictions.json file for each case.
+
+The expert demonstration and goal references are selected from the LIBERO
+datasets; the three policy rollouts were recorded in the LIBERO simulator. These
+are selected qualitative examples, not a representative benchmark.

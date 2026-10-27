@@ -1,0 +1,31 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow"><title>Inference · Event2Reward</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../assets/mark.svg"></head><body><header class="site-header"><div class="nav-inner"><a class="brand" href="../index.html"><img src="../assets/mark.svg" width="26" height="26" alt="">Event2Reward</a><nav><a href="../index.html#release">Resources</a><a href="../index.html#demo">Demo</a></nav></div></header><main class="docs-body"><p class="doc-note">Event2Reward 0.2.0 · Project documentation</p><h1 id="inference">Inference</h1><p class="availability-note">Stage1 and Stage2 weights are public. The inference SDK and four LIBERO suite models are not yet public; SDK commands require code repository access.</p>
+<h2 id="input-and-output">Input and output</h2>
+<p>Each <code>Observation</code> contains task text, the episode start image, an <strong>independent successful goal image for the same task</strong>, and exactly five causal history frames in chronological order. Supply PIL images, RGB arrays, or image paths. Images are center-cropped and resized to 224 × 224. Use an external camera consistently; the examples do not use the wrist camera.</p>
+<p>For Stage2 and the four LIBERO models, sample observations at 10 Hz. For query index q, use <code>[max(0, q-4), ..., q]</code>: early histories repeat the first frame. Never use future observations or substitute the evaluated video's final frame for the independent goal.</p>
+<p><code>progress</code> is the expectation over 101 progress bins in [0, 1]. It is not a success probability, can decrease, and may underestimate a completed task or overestimate a failed one. Outputs also contain progress variance/entropy and auxiliary trend probabilities in <code>growth</code>, <code>stable</code>, <code>regression</code> order. No universal success threshold is supplied.</p>
+<p>Stage1 is primarily an initialization checkpoint and uses a 0.25-second training history interval; see <a href="adaptation.html#joint-training">training stages</a>. The released loader always center-crops. Stage1 training instead squared frames per source dataset (center crop, letterbox, or a fixed crop), so to match its training inputs, square non-square camera frames before passing them in.</p>
+<h2 id="single-and-batch-prediction">Single and batch prediction</h2>
+<pre><code class="language-python">from event2reward import Event2Reward, Observation
+model = Event2Reward.from_pretrained(&quot;niejunnan25/Event2Reward-Qwen3.5-4B-Stage2&quot;)
+observation = Observation(&quot;place the bowl on the plate&quot;, &quot;start.png&quot;, &quot;goal.png&quot;,
+                          [f&quot;h{i}.png&quot; for i in range(5)])
+result = model.predict([observation], include_distribution=True)
+batch_result = model.predict([observation, observation])
+</code></pre>
+<p>Batching requires additional memory. <code>include_distribution=True</code> adds the full 101-bin probability vector. <code>model.prepare(observations)</code> exposes the model inputs for numerical comparisons.</p>
+<h2 id="trajectories-and-mp4">Trajectories and MP4</h2>
+<pre><code class="language-python">results = model.predict_trajectory(
+    frames=frames, task=&quot;place the bowl on the plate&quot;, goal=&quot;goal.png&quot;,
+    batch_size=1, stride=1, timestamps=timestamps,
+)
+</code></pre>
+<p><code>frames</code> must already be sampled at the observation interval; <code>timestamps</code> are strictly increasing seconds, with one timestamp per frame. Optional <code>query_indices</code> selects queries without changing the history. Each result includes its query/history indices and timestamp. The <a href="https://github.com/niejunnan25/Event2Reward/blob/main/examples/libero_spatial/run_example.py">video example</a> handles MP4 decoding using presentation timestamps and a fixed RGB conversion.</p>
+<h2 id="cli">CLI</h2>
+<pre><code class="language-bash">event2reward infer --bundle niejunnan25/Event2Reward-Qwen3.5-4B-LIBERO-Spatial --observations examples/quickstart/observations.json --output prediction.json
+</code></pre>
+<p>The observations JSON is a list of objects with <code>task</code>, <code>start</code>, <code>goal</code>, and <code>history</code>. Image paths resolve relative to that JSON file. <code>--bundle</code> also accepts a local model directory; <code>--device</code> defaults to <code>cuda:0</code>.</p>
+<h2 id="save-and-export">Save and export</h2>
+<pre><code class="language-python">model.save_pretrained(&quot;checkpoints/saved-copy&quot;)
+reloaded = Event2Reward.from_pretrained(&quot;checkpoints/saved-copy&quot;)
+</code></pre>
+<p>The destination must not exist. This saves the current parameters and loading assets. After adaptation, export a checkpoint through <code>event2reward export</code>; its <code>--help</code> lists the checkpoint, backbone, output, model identifier, and integrity argument. Supply the same backbone/tokenizer used for training. Training export and reload are distinct from resuming optimizer state.</p></main></body></html>

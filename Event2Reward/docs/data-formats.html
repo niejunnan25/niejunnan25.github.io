@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow"><title>Data formats · Event2Reward</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../assets/mark.svg"></head><body><header class="site-header"><div class="nav-inner"><a class="brand" href="../index.html"><img src="../assets/mark.svg" width="26" height="26" alt="">Event2Reward</a><nav><a href="../index.html#release">Resources</a><a href="../index.html#demo">Demo</a></nav></div></header><main class="docs-body"><p class="doc-note">Event2Reward 0.2.0 · Project documentation</p><h1 id="data-formats">Data formats</h1>
+<h2 id="inference-observations">Inference observations</h2>
+<p>The CLI accepts a JSON array of observations. Each observation has these fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>task</code></td>
+<td>Nonempty task instruction</td>
+</tr>
+<tr>
+<td><code>start</code></td>
+<td>Episode-start RGB image path</td>
+</tr>
+<tr>
+<td><code>goal</code></td>
+<td>Independent successful reference image for the same task</td>
+</tr>
+<tr>
+<td><code>history</code></td>
+<td>Exactly five causal RGB image paths, oldest first, ending at the query</td>
+</tr>
+</tbody>
+</table>
+<p>Paths are relative to the observation JSON file. Use an independent successful
+execution for <code>goal</code>, never the evaluated trajectory's last frame. Repeat the
+start frame where an early query has fewer than five history frames.
+Stage2 and the four LIBERO models use 0.1-second history intervals; Stage1 uses
+0.25 seconds. The synthetic images illustrate ordering without asserting a
+real-world capture rate.</p>
+<pre><code class="language-json">[
+  {
+    &quot;task&quot;: &quot;move the red block into the outlined target on the right&quot;,
+    &quot;start&quot;: &quot;frame-00.png&quot;,
+    &quot;goal&quot;: &quot;goal-reference.png&quot;,
+    &quot;history&quot;: [&quot;frame-00.png&quot;, &quot;frame-01.png&quot;, &quot;frame-02.png&quot;, &quot;frame-03.png&quot;, &quot;frame-04.png&quot;]
+  }
+]
+</code></pre>
+<p>This row appears in the <a href="../data/formats/examples/synthetic-inference/observations.json">complete eight-query example</a>.
+The <a href="../data/formats/schemas/observations.schema.json">JSON schema</a> checks structure. Temporal
+causality, task agreement, and success of the reference require separate checks.
+The returned progress is in [0, 1], may decrease, and is not a success probability.
+Trend is an auxiliary output.</p>
+<h2 id="relation-records-for-adaptation">Relation records for adaptation</h2>
+<p>Each JSONL row contains <code>clips</code> and an optional <code>relation</code>. A clip identifies
+<code>sample_id</code>, <code>dataset_id</code>, <code>physical_episode_id</code>, task <code>instruction</code>, <code>video_path</code>,
+<code>start_frame</code>, <code>goal_frame</code>, five <code>history_frames</code>, <code>current_frame</code>, and its
+supervision masks. Independent goals use <code>goal_dataset_id</code> and <code>goal_video_path</code>.
+<code>target_progress</code> is in [0,1]; <code>progress_valid</code> controls absolute progress
+supervision. <code>target_trend</code> is 0/1/2 (growth/stable/regression), with a separate
+<code>trend_valid</code> mask. A missing absolute label must not be treated as progress zero.</p>
+<p>A relation specifies <code>kind</code>, <code>anchor_index</code>, <code>secondary_anchor_index</code> when needed,
+<code>member_indices</code>, and <code>margin</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Relation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>Recoverable event: no higher than its anchor</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Irrecoverable event: strictly below its anchor</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Hesitation plateau</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Regression valley between two anchors</td>
+</tr>
+</tbody>
+</table>
+<p>Preserve the annotation's anchor semantics and uncertain boundaries. Source
+annotations are not universally human-verified. The code's
+<a href="https://github.com/niejunnan25/Event2Reward/blob/main/event2reward/data/schema.py">executable schema</a>
+and <a href="https://github.com/niejunnan25/Event2Reward/blob/main/event2reward/modeling/losses.py">loss definitions</a>
+define the precise inequalities.</p>
+<h2 id="dataset-manifest">Dataset manifest</h2>
+<p>The adaptation manifest assigns expert and event sources to the training and
+validation splits. Generate a complete runnable manifest and records using
+<code>python -m event2reward.example_data --output data/synthetic</code>.
+See the <a href="adaptation.html">adaptation guide</a>
+for the manifest layout, source fractions, initialization, and supervision masks.
+Full source datasets and annotations are not included in this package.</p></main></body></html>

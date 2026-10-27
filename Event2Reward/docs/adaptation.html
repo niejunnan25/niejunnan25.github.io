@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow"><title>Adaptation · Event2Reward</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../assets/mark.svg"></head><body><header class="site-header"><div class="nav-inner"><a class="brand" href="../index.html"><img src="../assets/mark.svg" width="26" height="26" alt="">Event2Reward</a><nav><a href="../index.html#release">Resources</a><a href="../index.html#demo">Demo</a></nav></div></header><main class="docs-body"><p class="doc-note">Event2Reward 0.2.0 · Project documentation</p><h1 id="adaptation">Adaptation</h1><p class="availability-note">Stage1 and Stage2 weights are public. The inference SDK and four LIBERO suite models are not yet public; SDK commands require code repository access.</p>
+<p>Start from Stage2 (the jointly trained model) and provide successful, suboptimal, and failed trajectories for your own tasks. <a href="installation.html#adaptation">Install training dependencies</a> first, including the additional Hopper requirements where applicable.</p>
+<h2 id="dataset-manifest">Dataset manifest</h2>
+<p><code>dataset.json</code> uses <code>event2reward.adaptation-data.v1</code>:</p>
+<pre><code class="language-json">{
+  &quot;schema&quot;: &quot;event2reward.adaptation-data.v1&quot;,
+  &quot;dataset_roots&quot;: {&quot;my_media&quot;: &quot;media&quot;},
+  &quot;train_sources&quot;: [
+    {&quot;path&quot;: &quot;expert.jsonl&quot;, &quot;index_format&quot;: &quot;relation_v1&quot;, &quot;role&quot;: &quot;expert&quot;, &quot;family&quot;: &quot;expert&quot;, &quot;clip_fraction&quot;: 0.5},
+    {&quot;path&quot;: &quot;kind3.jsonl&quot;, &quot;index_format&quot;: &quot;relation_v1&quot;, &quot;role&quot;: &quot;event&quot;, &quot;family&quot;: &quot;event_kind3&quot;, &quot;clip_fraction&quot;: 0.125},
+    {&quot;path&quot;: &quot;kind4.jsonl&quot;, &quot;index_format&quot;: &quot;relation_v1&quot;, &quot;role&quot;: &quot;event&quot;, &quot;family&quot;: &quot;event_kind4&quot;, &quot;clip_fraction&quot;: 0.125},
+    {&quot;path&quot;: &quot;kind5.jsonl&quot;, &quot;index_format&quot;: &quot;relation_v1&quot;, &quot;role&quot;: &quot;event&quot;, &quot;family&quot;: &quot;event_kind5&quot;, &quot;clip_fraction&quot;: 0.125},
+    {&quot;path&quot;: &quot;kind6.jsonl&quot;, &quot;index_format&quot;: &quot;relation_v1&quot;, &quot;role&quot;: &quot;event&quot;, &quot;family&quot;: &quot;event_kind6&quot;, &quot;clip_fraction&quot;: 0.125},
+    {&quot;path&quot;: &quot;expert.jsonl&quot;, &quot;index_format&quot;: &quot;relation_v1&quot;, &quot;role&quot;: &quot;expert_fill&quot;, &quot;family&quot;: &quot;expert_fill&quot;, &quot;clip_fraction&quot;: 0.0}
+  ]
+}
+</code></pre>
+<p>Paths resolve relative to the manifest. Each source must contain records; adjust source fractions for the event types you actually have. Fractions describe a clip budget, not equal numbers of relation groups. The fill source completes batches without breaking a relation group.</p>
+<h2 id="prepare-inspect-train">Prepare, inspect, train</h2>
+<p>Download Stage2 into <code>checkpoints/stage2</code>, then run:</p>
+<pre><code class="language-bash">event2reward-train prepare --recipe adapt --data-root data/my-task --dataset-manifest data/my-task/dataset.json --init-checkpoint checkpoints/stage2 --output-dir outputs/my-task --config-out configs/my-task.json
+event2reward-train run --profile suite --config configs/my-task.json --check-only
+event2reward-train run --profile suite --config configs/my-task.json
+</code></pre>
+<p>Preparation resolves paths, validates initialization and records the effective configuration. Check-only validates it before model loading. Re-run preparation into a new config filename after changing configuration, data, or implementation. Use <code>--overrides overrides.json</code> during preparation; never hand-edit a prepared config.</p>
+<h2 id="supervision-and-optimization">Supervision and optimization</h2>
+<p>The suite recipe uses a clip budget of 10 per device: half expert clips, with one eighth allocated to each of four event families, and expert filling for unused slots. Successful clips provide temporal progress and valid trend labels. Event clips use relation supervision (<code>event_progress_objective=relation_only</code>, <code>hesitation_objective=relation</code>); preserve <code>progress_valid</code> and <code>trend_valid</code> masks.</p>
+<p>The default schedule is 500 steps with 25 warm-up steps, seed 42, accumulation 4, BF16 and SDPA. Learning rates are 2e-6 for language, 5e-7 for vision, and 1e-5 for prediction heads; the last three vision layers and merger are trainable. Loss weights are progress 1, trend 1, relation 10. Goal dropout is zero for suite adaptation. The complete recipe is distributed with the package.</p>
+<h2 id="synthetic-pipeline-example">Synthetic pipeline example</h2>
+<pre><code class="language-bash">python -m event2reward.example_data --output data/synthetic
+event2reward-train prepare --recipe adapt --data-root data/synthetic --dataset-manifest data/synthetic/dataset.json --init-checkpoint checkpoints/stage2 --output-dir outputs/synthetic --config-out configs/synthetic.json
+event2reward-train run --profile suite --config configs/synthetic.json --check-only
+</code></pre>
+<p>The generator creates synthetic videos and all four relation types. Its labels are designed to exercise the pipeline, not to evaluate robot understanding. For a four-step smoke run, prepare with these overrides and then run normally:</p>
+<pre><code class="language-json">{&quot;stop_after_step&quot;: 4, &quot;save_at_steps&quot;: [4, 500], &quot;num_workers&quot;: 0,
+  &quot;gradient_accumulation_steps&quot;: 1, &quot;keep_resume_states&quot;: 0, &quot;log_steps&quot;: 1}
+</code></pre>
+<p>Keep the 500-step schedule and stop early; shortening the schedule changes the learning rates. Save optimizer state if you intend to resume training later.</p>
+<h2 id="joint-training">Joint training</h2>
+<p><code>--recipe joint</code> uses <code>--profile joint</code>. Full Stage2 retraining also requires the <strong>Stage1 checkpoint</strong>, pretraining replay, and source datasets; downloading Stage2 alone does not supply these. The released Stage2 parameters are from step 10,000 of a <strong>40,000-step schedule</strong>. Do not change <code>max_steps</code> to 10,000 to reproduce that learning-rate trajectory. Joint replay uses source-specific goal dropout, unlike suite adaptation. The initial and resumed recipes preserve their execution settings.</p>
+<p>The Stage1 initialization is <code>niejunnan25/Event2Reward-Qwen3.5-4B-Stage1</code> (step 50,000). The jointly trained Stage2 checkpoint is <code>niejunnan25/Event2Reward-Qwen3.5-4B-Stage2</code>; the training recipe identifier remains <code>joint</code>. Stage1 uses a 0.25-second training history interval, while the downstream Stage2 and LIBERO recipes use 0.1 seconds. The Stage1 release provides parameters and metadata, not optimizer state for exact training resume.</p></main></body></html>

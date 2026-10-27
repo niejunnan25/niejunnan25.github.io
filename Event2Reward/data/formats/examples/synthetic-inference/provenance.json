@@ -1,0 +1,8 @@
+{
+  "kind": "authored synthetic input-format fixture",
+  "source": "Generated geometric images; no third-party media",
+  "license": "Apache-2.0",
+  "purpose": "Illustrates causal input format only; no predicted output or robot evaluation claim",
+  "history_rule": "[max(0,q-4), ..., q]",
+  "goal": "separately drawn successful reference; not a trajectory terminal frame"
+}

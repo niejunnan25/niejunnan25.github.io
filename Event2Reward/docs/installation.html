@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow"><title>Installation · Event2Reward</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../assets/mark.svg"></head><body><header class="site-header"><div class="nav-inner"><a class="brand" href="../index.html"><img src="../assets/mark.svg" width="26" height="26" alt="">Event2Reward</a><nav><a href="../index.html#release">Resources</a><a href="../index.html#demo">Demo</a></nav></div></header><main class="docs-body"><p class="doc-note">Event2Reward 0.2.0 · Project documentation</p><h1 id="installation">Installation</h1><p class="availability-note">Stage1 and Stage2 weights are public. The inference SDK and four LIBERO suite models are not yet public; SDK commands require code repository access.</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Linux x86_64 and Conda; the commands below select Python 3.10.</li>
+<li>NVIDIA GPU and driver: <code>nvidia-smi</code> must report <strong>CUDA Version ≥ 12.8</strong>. This field describes driver compatibility, not an installed compiler.</li>
+<li><strong>No CUDA Toolkit is required for inference.</strong> PyPI's default Linux <code>torch==2.8.0</code> installs CUDA 12.8 runtime dependencies; no separate PyTorch index is needed.</li>
+</ul>
+<h2 id="inference">Inference</h2>
+<pre><code class="language-bash">git clone https://github.com/niejunnan25/Event2Reward.git
+cd Event2Reward
+conda create -n event2reward python=3.10 -y
+conda activate event2reward
+pip install -e .
+
+# Recommended: the same fast kernels as the paper environment (prebuilt, no compiler needed)
+pip install flash-linear-attention==0.5.2 fla-core==0.5.2
+pip install https://github.com/Dao-AILab/causal-conv1d/releases/download/v1.7.0/causal_conv1d-1.7.0%2Bcu12torch2.8cxx11abiTRUE-cp310-cp310-linux_x86_64.whl
+</code></pre>
+<p>The final two commands are optional acceleration packages. Without them, Transformers uses its PyTorch implementation, which is slower and can change the predictions. Use the recommended kernels when comparing against the included expected predictions. Numerical comparisons are documented in <a href="reproducibility.html">reproducibility</a>.</p>
+<h2 id="without-the-optional-acceleration-packages">Without the optional acceleration packages</h2>
+<p>Without the recommended kernels, Transformers falls back to a PyTorch implementation. It is slower and its outputs differ slightly from the recommended kernels. The table lists the largest absolute differences from the kernel outputs over eight fixed inputs per model; they are observed on these inputs, not error bounds or a measure of task success.</p>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: right;">Max logit difference</th>
+<th style="text-align: right;">Max progress difference</th>
+<th style="text-align: right;">Fast (s/query)</th>
+<th style="text-align: right;">PyTorch (s/query)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stage2</td>
+<td style="text-align: right;">0.168945</td>
+<td style="text-align: right;">0.016981</td>
+<td style="text-align: right;">0.0903</td>
+<td style="text-align: right;">0.3197</td>
+</tr>
+<tr>
+<td>Spatial</td>
+<td style="text-align: right;">0.250000</td>
+<td style="text-align: right;">0.021930</td>
+<td style="text-align: right;">0.0935</td>
+<td style="text-align: right;">0.2234</td>
+</tr>
+<tr>
+<td>Object</td>
+<td style="text-align: right;">0.156250</td>
+<td style="text-align: right;">0.015876</td>
+<td style="text-align: right;">0.0918</td>
+<td style="text-align: right;">0.2346</td>
+</tr>
+<tr>
+<td>Goal</td>
+<td style="text-align: right;">0.156250</td>
+<td style="text-align: right;">0.011019</td>
+<td style="text-align: right;">0.0921</td>
+<td style="text-align: right;">0.2285</td>
+</tr>
+<tr>
+<td>LIBERO-10</td>
+<td style="text-align: right;">0.187500</td>
+<td style="text-align: right;">0.070456</td>
+<td style="text-align: right;">0.0916</td>
+<td style="text-align: right;">0.2320</td>
+</tr>
+</tbody>
+</table>
+<p>Timings use BF16, batch 1, one fixed query per model, five warm-up queries and the median of 30 queries, including preprocessing. Stage2 runs on H200; the other models run on H20D. Use the recommended kernels to reproduce the supplied example predictions.</p>
+<h2 id="download-a-model">Download a model</h2>
+<p>Once public access to the model repositories is enabled:</p>
+<pre><code class="language-bash">hf download niejunnan25/Event2Reward-Qwen3.5-4B-Stage2 --local-dir checkpoints/stage2
+</code></pre>
+<p>Or load directly:</p>
+<pre><code class="language-python">from event2reward import Event2Reward
+model = Event2Reward.from_pretrained(&quot;niejunnan25/Event2Reward-Qwen3.5-4B-Stage2&quot;)
+</code></pre>
+<p><code>revision</code> and <code>cache_dir</code> may be passed to <code>from_pretrained</code>. <code>HF_HUB_OFFLINE=1</code> uses the local Hub cache. Local model directories work with the same API and CLI.</p>
+<h2 id="adaptation">Adaptation</h2>
+<pre><code class="language-bash">pip install -e &quot;.[train]&quot;
+</code></pre>
+<p>FLA's current checks suggest that non-Hopper GPUs do not need the additional CUDA compiler setup below; adaptation has not yet been tested on a non-Hopper GPU. On Hopper (H100/H200/H20), also install TileLang and provide a CUDA 12.8 compiler:</p>
+<pre><code class="language-bash">pip install tilelang==0.1.9 apache-tvm-ffi==0.1.10
+</code></pre>
+<p>The TVM FFI version is pinned because newer releases can fail when TileLang first loads during the backward pass.</p>
+<p>Choose one compiler setup:</p>
+<ol>
+<li>Existing installation: <code>export CUDA_HOME=/usr/local/cuda-12.8</code>.</li>
+<li>User-local installation:</li>
+</ol>
+<p><code>bash
+   python scripts/install_cuda_toolchain.py --prefix ~/cuda-12.8
+   export CUDA_HOME=~/cuda-12.8</code></p>
+<p>FLA's Hopper backward kernel requires TileLang with the pinned Triton version. This compiler requirement applies to adaptation, not inference. The compiler must be at least CUDA 12.8 and must not exceed the CUDA Version reported by <code>nvidia-smi</code>.</p>
+<h2 id="check-your-environment">Check your environment</h2>
+<pre><code class="language-bash">event2reward env
+event2reward env --json
+</code></pre>
+<p>This read-only diagnostic always exits with status 0; inspect its final conclusion. Missing optional fast kernels do not prevent inference. Hopper compiler checks concern adaptation, so a missing compiler can still yield <code>ready for inference</code>. The diagnostic and training preflight apply the same Triton-version rule and reject the known incompatible TileLang 0.1.9 / TVM FFI 0.1.15.post0 combination.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<ul>
+<li>A PyPI mirror can be selected with <code>-i https://mirrors.aliyun.com/pypi/simple/</code> or <code>-i https://pypi.tuna.tsinghua.edu.cn/simple</code>. For Hugging Face, set <code>HF_ENDPOINT=https://hf-mirror.com</code> before starting Python.</li>
+<li>If an offline Conda environment has no pip, run <code>python -m ensurepip --upgrade</code>, then <code>python -m pip install --upgrade pip</code>.</li>
+<li>If GitHub is unreachable, download the official causal-conv1d wheel on another machine and install that file with <code>pip install &lt;downloaded-file.whl&gt;</code>.</li>
+<li>Create a separate Conda environment: an existing RL environment may require incompatible torch or Transformers versions.</li>
+<li>Triton JIT compilation needs a C compiler such as <code>gcc</code>.</li>
+<li>Set <code>PYTHONNOUSERSITE=1</code> if user-site packages interfere with imports.</li>
+<li>Stage1 and Stage2 are publicly available. The four LIBERO suite models remain private; a complete local model directory also works.</li>
+</ul></main></body></html>

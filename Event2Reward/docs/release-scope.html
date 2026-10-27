@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow"><title>Release scope · Event2Reward</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../assets/mark.svg"></head><body><header class="site-header"><div class="nav-inner"><a class="brand" href="../index.html"><img src="../assets/mark.svg" width="26" height="26" alt="">Event2Reward</a><nav><a href="../index.html#release">Resources</a><a href="../index.html#demo">Demo</a></nav></div></header><main class="docs-body"><p class="doc-note">Event2Reward 0.2.0 · Project documentation</p><h1 id="release-scope">Release scope</h1>
+<table>
+<thead>
+<tr>
+<th>Material</th>
+<th>Included</th>
+<th>Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code 0.2.0</td>
+<td>Inference, model loading, adaptation recipes, processing tools, and examples</td>
+<td>Private GitHub repository during release preparation</td>
+</tr>
+<tr>
+<td>Six models</td>
+<td>Stage1, Stage2, and four LIBERO suite models; full weights, processor, configuration, and Model Cards</td>
+<td>Stage1 and Stage2 public; four LIBERO suite models private pending release</td>
+</tr>
+<tr>
+<td>Data formats</td>
+<td>Observation schema, relation-format and tool documentation, original synthetic images</td>
+<td>Downloadable formats-and-examples package on the homepage</td>
+</tr>
+<tr>
+<td>Full annotations</td>
+<td>Not included in the formats package</td>
+<td>Event annotations, data splits, and source-media references: coming soon</td>
+</tr>
+<tr>
+<td>Third-party source videos</td>
+<td>Not included in the formats package</td>
+<td>Source-specific terms apply</td>
+</tr>
+<tr>
+<td>LIBERO demonstrations</td>
+<td>Four videos, independent goals, and raw predictions</td>
+<td>Public qualitative examples with source attribution and unmodified predictions</td>
+</tr>
+<tr>
+<td>RL framework</td>
+<td>Separate policy-training and reward-service integration</td>
+<td>Separate planned release</td>
+</tr>
+</tbody>
+</table>
+<h2 id="choosing-a-model">Choosing a model</h2>
+<p>Use Stage2 for general progress estimation or as the starting point for adapting
+to your own tasks. Stage1 is the pretrained initialization used for Stage2.
+Stage1 expects five history frames at 0.25-second intervals; Stage2 and the four
+LIBERO models use 0.1 seconds. The Spatial, Object, Goal, and LIBERO-10 models
+correspond to the paper's suite-specific experiments.</p>
+<p>The reported policy success rates belong to the complete RL system with adapted
+reward models. They are not standalone checkpoint accuracy. Progress is a learned
+estimate, not a calibrated success probability; trend is an auxiliary output.</p>
+<h2 id="data-and-media">Data and media</h2>
+<p>The data package describes formats and the available processing utilities. It
+does not contain the complete event annotations, training indices, private
+human-video corpus, or original annotation-production pipeline. These materials
+require a separate release decision. Upstream code licenses do not automatically
+grant permission to redistribute all dataset and simulator assets.</p>
+<h2 id="publication">Publication</h2>
+<p>The project page and current 44-page manuscript are public. The manuscript lists 17 authors affiliated with Peking University and JD Explore Academy. Junnan Nie and Zitian Fan are equal contributors; Songfang Huang is the sole corresponding author. The arXiv identifier will be added after announcement.</p></main></body></html>

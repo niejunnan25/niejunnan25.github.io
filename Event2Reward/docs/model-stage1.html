@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow"><title>Event2Reward-Qwen3.5-4B-Stage1 · Event2Reward</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../assets/mark.svg"></head><body><header class="site-header"><div class="nav-inner"><a class="brand" href="../index.html"><img src="../assets/mark.svg" width="26" height="26" alt="">Event2Reward</a><nav><a href="../index.html#release">Resources</a><a href="../index.html#demo">Demo</a></nav></div></header><main class="docs-body"><p class="doc-note">Event2Reward 0.2.0 · Project documentation</p><h1 id="event2reward-qwen35-4b-stage1">Event2Reward-Qwen3.5-4B-Stage1</h1><p class="availability-note">Stage1 and Stage2 weights are public. The inference SDK and four LIBERO suite models are not yet public; SDK commands require code repository access.</p>
+<p>Stage1 pretrained progress model and the initialization used for Stage2 joint training.</p>
+<h2 id="model">Model</h2>
+<p>Qwen3.5-4B with full BF16 parameters, a 101-bin progress head and a three-class auxiliary trend head. This checkpoint was saved at step 50,000 of the robot70_human30 run. The original learning-rate schedule was configured for 500,000 steps; this release is the 50,000-step checkpoint.</p>
+<p>The bundle includes processor, tokenizer, configuration and training metadata. It does not include optimizer state or the full training datasets. Install the Event2Reward package from the <a href="https://github.com/niejunnan25/Event2Reward">source repository</a>.</p>
+<h2 id="use">Use</h2>
+<pre><code class="language-python">from event2reward import Event2Reward, Observation
+model = Event2Reward.from_pretrained(&quot;niejunnan25/Event2Reward-Qwen3.5-4B-Stage1&quot;)
+obs = Observation(&quot;place the bowl on the plate&quot;, &quot;start.png&quot;, &quot;goal.png&quot;,
+                  [f&quot;h{i}.png&quot; for i in range(5)])
+print(model.predict([obs]))
+</code></pre>
+<p>For this Stage1 checkpoint, use five causal RGB history frames spaced <strong>0.25 seconds</strong> apart, with the task text, episode start and an independent successful reference goal. Repeat the start frame for early history positions. The training recipe used goal dropout 0.5; the public example uses a goal-present input. Do not substitute a final frame from the evaluated episode for the independent goal. Downstream Stage2 and LIBERO examples use a different 0.1-second history interval.</p>
+<p>The released loader always center-crops frames to 224 × 224. Stage1 training instead squared frames per source dataset (center crop, letterbox, or a fixed crop), so to match its training inputs, square non-square camera frames before passing them in.</p>
+<p>Stage2 training can initialize from these parameters. See the <a href="adaptation.html">adaptation guide</a>. Reproducing training also requires the corresponding data and recipe; no exact optimizer-state resume is provided.</p>
+<h2 id="results-and-limitations">Results and limitations</h2>
+<p>No standalone policy success rate is assigned to Stage1. Progress is an uncalibrated learned estimate in [0,1] and may decrease or be inaccurate. Trend is an auxiliary training output. System-level LIBERO results belong to the full downstream method, not this checkpoint alone.</p>
+<h2 id="license-and-attribution">License and attribution</h2>
+<p>Derivative weights use Apache-2.0; see LICENSE, NOTICE and LICENSES for Qwen attribution. Third-party data and media retain their source terms and are not redistributed in this model repository.</p></main></body></html>

@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow"><title>Processing tools · Event2Reward</title><link rel="stylesheet" href="../styles.css"><link rel="icon" href="../assets/mark.svg"></head><body><header class="site-header"><div class="nav-inner"><a class="brand" href="../index.html"><img src="../assets/mark.svg" width="26" height="26" alt="">Event2Reward</a><nav><a href="../index.html#release">Resources</a><a href="../index.html#demo">Demo</a></nav></div></header><main class="docs-body"><p class="doc-note">Event2Reward 0.2.0 · Project documentation</p><h1 id="processing-tools">Processing tools</h1><p class="availability-note">Stage1 and Stage2 weights are public. The inference SDK and four LIBERO suite models are not yet public; SDK commands require code repository access.</p>
+<p>Install <a href="installation.html">Event2Reward</a>
+to use these commands. This package contains formats and samples; the executable
+implementations are in the code repository.</p>
+<h2 id="generate-a-synthetic-adaptation-dataset">Generate a synthetic adaptation dataset</h2>
+<pre><code class="language-bash">python -m event2reward.example_data --output data/synthetic
+</code></pre>
+<p>The generator produces synthetic videos, expert/event relation indices, and a
+dataset manifest. Follow the
+<a href="adaptation.html">adaptation recipe</a>
+to prepare a configuration, check it, and run training. These generated data test
+the workflow; they do not measure reward quality on real robot tasks.</p>
+<h2 id="materialize-portable-indices">Materialize portable indices</h2>
+<pre><code class="language-bash">event2reward-data materialize --index portable.jsonl.gz --asset-map local-assets.json --output materialized.jsonl
+event2reward-data materialize-set --help
+</code></pre>
+<p>Portable indices reference <code>asset://</code> IDs. Supply an asset map that resolves them
+to locally available media. <code>materialize-set</code> handles a collection of indices;
+its help documents the manifest format. These tools do not download licensed
+source videos. Preserve source identifiers and split assignments.</p>
+<h2 id="inspect-dataset-splits">Inspect dataset splits</h2>
+<pre><code class="language-bash">event2reward-data inspect-splits --indices train.jsonl val.jsonl test.jsonl --output splits.json
+</code></pre>
+<p>The checker examines declared physical episode identities and goal-source
+splits. It reports missing identity evidence. Different IDs do not prove that
+video content is different; the check is not content-based deduplication.</p>
+<h2 id="relocate-existing-media-paths">Relocate existing media paths</h2>
+<pre><code class="language-bash">event2reward-train rebase-index --input original.jsonl --output relocated.jsonl --mapping paths.json
+</code></pre>
+<p><code>paths.json</code> maps each old media root to a new absolute root. The command relocates
+recognized absolute media paths without changing labels or task text. Existing
+outputs are protected from overwriting. These are data handling tools, not the
+complete original annotation-production pipeline.</p></main></body></html>

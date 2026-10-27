@@ -1,0 +1,9 @@
+Event2Reward data formats and examples
+
+The original observation schema, documentation, and generated geometric images
+in this package are provided under the Apache License, Version 2.0.
+
+No model weights, third-party robot videos, or third-party annotations are
+included. Event2Reward model weights derive from Qwen3.5-4B; the corresponding
+attribution and license texts accompany the separate model repositories.
+Separately obtained dependencies, models, and datasets retain their own terms.
