@@ -8,7 +8,7 @@ The paper PDF, assets, and documentation retain their existing URLs. The full ho
 
 Public project URL: https://niejunnan25.github.io/Event2Reward/
 
-Static website prepared for publication on 2026-10-28. The manuscript has 17 authors; Junnan Nie and Zitian Fan are equal contributors and Songfang Huang is the sole corresponding author. The bundled PDF is the 44-page v26 manuscript, with Project Page above Code.
+Static website prepared for publication on 2026-10-28. The manuscript has 17 authors; Junnan Nie and Zitian Fan are equal contributors and Songfang Huang is the sole corresponding author. The bundled PDF is the 44-page v27 manuscript, including the RynnValue citation, with Project Page above Code.
 
 The inference SDK, Stage1 and Stage2 are public. Four suite models, full event annotations and the complete RL framework have separate pending releases. The format download contains schemas, documentation and synthetic examples, not the complete paper dataset.
 
