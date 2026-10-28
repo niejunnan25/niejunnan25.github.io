@@ -1,3 +1,9 @@
+# Temporary project-page redirect
+
+The project URL currently redirects to https://github.com/niejunnan25/Event2Reward. This uses client-side navigation, not a permanent HTTP redirect.
+
+The paper PDF, assets, and documentation retain their existing URLs. The full homepage is preserved in Git history and in the local publication workspace's homepage-draft directory. Restore that homepage to index.html when it is ready; the paper's Project Page URL stays unchanged.
+
 # Event2Reward project website
 
 Public project URL: https://niejunnan25.github.io/Event2Reward/
