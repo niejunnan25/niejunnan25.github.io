@@ -1,8 +1,0 @@
-/* round-10 candidate: interactive learning curves in #results */
-.cand-block{margin-top:44px}
-.cand-block>h3{font-size:19px;margin:0 0 6px;text-align:center}
-.cand-block>.cand-cap{font-size:13px;line-height:1.55;color:var(--muted);text-align:center;margin:18px auto 0;max-width:760px}
-.cand-block .lc-legend{margin:10px 0 16px}
-.cand-block .lc-key:focus-visible{outline:3px solid #668fd1;outline-offset:2px;border-radius:3px}
-.cand-block .lc-title{font-weight:600}
-@media(max-width:600px){.cand-block{margin-top:34px}.cand-block>h3{font-size:17px}.cand-block .lc-grid{gap:14px}.cand-block>.cand-cap{font-size:12px;text-align:left}}

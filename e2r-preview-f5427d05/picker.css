@@ -1,8 +1,0 @@
-/* Episode picker (numbered buttons). */
-.pk-groups{display:flex;flex-direction:column;align-items:flex-end;gap:6px;margin-right:10px}
-.pk-num{display:flex;flex-wrap:wrap;align-items:center;gap:4px;font-size:13px;color:var(--muted);max-width:520px;justify-content:flex-end}
-.pk-num span{margin-right:4px}
-.pk-num .small-button{min-width:30px;padding:4px 0;text-align:center;font-size:12px}
-.pk-num .small-button.is-on{background:#e8eff9;border-color:#b9cbe8;color:var(--blue);font-weight:600}
-@media(max-width:600px){.pk-groups{align-items:flex-start;margin:0 0 6px;width:100%}.pk-num{max-width:none;justify-content:flex-start}}
-.sc-top .pr-ctrl:has(.pk-groups){align-items:flex-start}
