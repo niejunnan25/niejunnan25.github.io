@@ -159,5 +159,5 @@ window.M13_TEXT = {
     pickHost.innerHTML = ''; pk = MK.picker(pickHost, c, (id) => { show(id, true); keep(); });
     show(D.order[c][0], auto);
   }
-  go('stall', false);
+  go('regression', false);  // opens on 3. Regression + recovery (user 11-02)
 })();
