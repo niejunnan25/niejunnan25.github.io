@@ -1,0 +1,23 @@
+/* learning-curve charts (assets/lc/lc.js) */
+.lc{position:relative}
+.lc-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;margin:0 0 18px}
+.lc-key{display:inline-flex;align-items:center;gap:7px;border:0;background:none;padding:4px 2px;font-size:14px;color:#3d4652;cursor:pointer}
+.lc-key i{width:18px;height:3px;border-radius:2px}
+.lc-key.is-ours{font-weight:600;color:#1d232b}
+.lc-key[aria-pressed=false]{opacity:.38;text-decoration:line-through}
+.lc-grid{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:18px 22px}
+.lc-cell{margin:0;min-width:0}
+.lc-title{margin:0 0 4px;font-size:13px;font-weight:600;color:#2b323b;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lc-box{position:relative}
+.lc-box.is-clickable{cursor:pointer}
+.lc-svg{display:block;width:100%;height:auto;overflow:visible;touch-action:pan-y}
+.lc-tick{font-size:12px;fill:#7b8492;font-variant-numeric:tabular-nums}
+.lc-axis{font-size:12px;fill:#7b8492}
+.lc-tip{position:absolute;top:4px;z-index:5;pointer-events:none;background:#fffffff5;border:1px solid #dbe1ea;border-radius:6px;box-shadow:0 4px 14px #18203014;padding:7px 9px;font-size:12px;line-height:1.5;min-width:150px}
+.lc-tip b{display:block;font-weight:600;color:#2b323b;margin-bottom:2px}
+.lc-tip span{display:flex;align-items:center;gap:6px;color:#4d5868;white-space:nowrap}
+.lc-tip i{width:10px;height:3px;border-radius:2px;flex:none}
+.lc-tip em{margin-left:auto;padding-left:10px;font-style:normal;font-variant-numeric:tabular-nums;color:#1d232b}
+@media(max-width:900px){.lc-grid{grid-template-columns:repeat(min(var(--cols),2),minmax(0,1fr))}}
+@media(max-width:520px){.lc-grid{grid-template-columns:1fr}.lc-key{font-size:13px}}
+.lc-runs{color:#7b8492!important;margin-top:2px}

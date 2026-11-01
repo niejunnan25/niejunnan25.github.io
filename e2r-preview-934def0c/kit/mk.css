@@ -1,0 +1,42 @@
+/* Method kit styles (r12). Uses the page variables from style.css. */
+.mk-player{display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:24px;align-items:start}
+.mk-v video{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:6px;background:#eef1f4;cursor:pointer}
+.mk-head{display:flex;flex-wrap:wrap;align-items:center;gap:4px 14px;font-size:13px;color:#3d4652}
+.mk-key i{display:inline-block;width:20px;border-top:3px solid #2557a7;vertical-align:middle;margin-right:7px}
+.mk-key-time i{border-top:2px dashed #8a93a0}
+.mk-key-ref i{width:10px;height:10px;border:0;border-radius:50%;background:#1d232b;vertical-align:-1px}
+.mk-val{margin-left:auto;font-size:26px;line-height:1.1;color:#2557a7;font-variant-numeric:tabular-nums}
+.mk-chart{display:block;width:100%;height:auto;overflow:visible;touch-action:none;cursor:ew-resize;user-select:none;-webkit-user-select:none}
+.mk-chart:focus-visible{outline:3px solid #668fd1;outline-offset:4px;border-radius:4px}
+.mk-cap{font-size:14.5px;line-height:1.55;margin:6px 0 0;color:#3d4652}
+.mk-ctrl{margin-top:10px}
+.mk-compact{grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:18px}
+.mk-pick{display:flex;flex-wrap:wrap;align-items:center;gap:4px;margin:0 0 12px;font-size:13px;color:var(--muted)}
+.mk-pick-l{margin-right:6px}
+.mk-pick .small-button{min-width:30px;padding:4px 0;text-align:center;font-size:12px}
+.mk-pick .small-button.is-on{background:#e8eff9;border-color:#b9cbe8;color:var(--blue);font-weight:600}
+.mk-keys{display:grid;grid-template-columns:repeat(3,minmax(0,170px));gap:12px;margin-top:16px}
+.mk-k img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:5px;background:#eef1f4}
+.mk-k figcaption{font-size:12.5px;line-height:1.4;margin-top:6px;color:var(--muted)}
+.mk-k figcaption b{color:#1d232b;font-weight:600}
+/* model card */
+.mk-card{border:1px solid #dbe1ea;border-radius:12px;overflow:hidden}
+.mk-tabs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-bottom:1px solid var(--line);background:#fafbfd}
+.mk-tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;border:0;border-right:1px solid var(--line);background:none;padding:12px 14px;text-align:left;font-size:13.5px;color:#4d5868}
+.mk-tab:last-child{border-right:0}
+.mk-tab.is-on{background:#fff;color:#1d232b;box-shadow:inset 0 -3px 0 var(--blue)}
+.mk-n{font-size:12px;font-weight:700;color:var(--blue)}
+.mk-tn{font-weight:600;line-height:1.3}
+.mk-tag{font-size:12px;padding:1px 7px;border-radius:10px}
+.mk-absolute{background:#eef0f3;color:#4d5868}.mk-relative{background:#e8eff9;color:#2557a7}
+.mk-body{display:grid;grid-template-columns:minmax(0,.36fr) minmax(0,1fr);gap:28px;padding:22px 24px}
+.mk-info h4{font-size:20px;margin:0 0 8px;letter-spacing:-.02em}
+.mk-out{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);font-weight:650;margin:0 0 6px}
+.mk-def{font-size:15px;line-height:1.6;margin:0 0 12px}
+.mk-glyph{font:italic 22px/1.3 Georgia,"Times New Roman",serif;margin:0 0 14px;color:#1d232b}
+.mk-dl{margin:0;font-size:14px;line-height:1.55}
+.mk-dl dt{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:10px}
+.mk-dl dd{margin:2px 0 0}
+.mk-pen{font:13px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;color:#3d4652}
+@media(max-width:900px){.mk-body{grid-template-columns:1fr;gap:16px}.mk-player,.mk-compact{grid-template-columns:1fr;gap:12px}.mk-v{max-width:420px}}
+@media(max-width:600px){.mk-keys{grid-template-columns:repeat(3,minmax(0,1fr))}.mk-tabs{grid-template-columns:repeat(5,minmax(0,1fr))}.mk-tab{padding:9px 6px;font-size:12px}.mk-tab .mk-tn{display:none}.mk-tag{display:none}.mk-body{padding:14px}.mk-val{font-size:22px}.mk-keys{gap:6px}}
